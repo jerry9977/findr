@@ -1,0 +1,11 @@
+from django.conf.urls import url
+
+from . import views
+
+urlpatterns = [
+	# this set up the url as ....../index, and view.index
+	# open up views.py function call index.
+    url(r'^index/', views.index, name='index'),
+
+
+]
