@@ -35,9 +35,15 @@ class resultRestaurant(admin.ModelAdmin):
 class resultZoo(admin.ModelAdmin):
     list_display = ['name', 'address']
 
+class UserProfileAdmin(admin.ModelAdmin):
+    list_display = ['user', 'usertype', 'website']
+    class Meta:
+        model = UserProfile
+
 admin.site.register(Category)
 admin.site.register(Page)
 admin.site.register(Post,resultPost)
+admin.site.register(UserProfile, UserProfileAdmin)
 admin.site.register(College, resultCollege)
 admin.site.register(Library, resultLibrary)
 admin.site.register(Industry, resultIndustry)

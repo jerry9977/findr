@@ -36,8 +36,11 @@ INSTALLED_APPS = [
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
+    'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # Uncomment the next line to enable admin documentation:
+    # 'django.contrib.admindocs',
     'findr',
 ]
 
@@ -83,7 +86,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'findr',
         'USER': 'root',
-        'PASSWORD': 'password',
+        'PASSWORD': 'secret',
         'HOST': '127.0.0.1',
         'PORT': '3306',
         

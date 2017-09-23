@@ -6,6 +6,6 @@ urlpatterns = [
 	# this set up the url as ....../index, and view.index
 	# open up views.py function call index.
     url(r'^index/', views.index, name='index'),
-
-
+    url(r'^register/', views.register, name='register'),
+    url(r'^login/', views.user_login, name='login'),
 ]
