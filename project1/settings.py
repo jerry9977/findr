@@ -86,7 +86,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'findr',
         'USER': 'root',
-        'PASSWORD': 'secret',
+        'PASSWORD': 'yrrej9977',
         'HOST': '127.0.0.1',
         'PORT': '3306',
         

@@ -36,7 +36,7 @@ class resultZoo(admin.ModelAdmin):
     list_display = ['name', 'address']
 
 class UserProfileAdmin(admin.ModelAdmin):
-    list_display = ['user', 'usertype', 'website']
+    list_display = ['user', 'usertype']
     class Meta:
         model = UserProfile
 

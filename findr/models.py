@@ -42,8 +42,8 @@ class UserProfile(models.Model):
     user = models.OneToOneField(User)
 
     # The additional attributes we wish to include.
-    website = models.URLField(blank=True)
-    picture = models.ImageField(upload_to='profile_images', blank=True)
+    # website = models.URLField(blank=True)
+    # picture = models.ImageField(upload_to='profile_images', blank=True)
     usertype = models.CharField(max_length=128,choices = USERTYPES, default = '')
 
     class Meta:
@@ -51,7 +51,7 @@ class UserProfile(models.Model):
     
     # Override the __unicode__() method to return out something meaningful!
     def __unicode__(self):
-        return self.user.username, self.user.usertype, self.website
+        return self.user.username, self.user.usertype
 
 class College(models.Model):
     name = models.CharField(max_length=128)
