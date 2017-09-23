@@ -13,7 +13,8 @@ def index(request):
 #     retdict = {'articles': Article.objects.all(),}
 #     return render_to_response('findr/index.html', retdict, context_instance=RequestContext(request))
 
-
+def welcome(request):
+    return render(request, 'findr/welcome.html')
 
 
 def register(request):

@@ -1,0 +1,124 @@
+.app-frame{
+  position: relative;
+  height: 500px;
+  width:auto;
+  top:100px;
+  margin-right: auto;
+}
+.page-background:before {
+  content: "";
+  position: fixed;
+  top: -5%;
+  left: -5%;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  display: block;
+
+  background-image: url(../img/img1.jpeg);
+  background-size:cover;
+  width: 110%;
+  height: 110%;
+  
+  -webkit-filter: blur(10px);
+  -moz-filter: blur(10px);
+  -o-filter: blur(10px);
+  -ms-filter: blur(10px);
+  filter: blur(10px);
+}
+
+.page-background{
+
+	overflow: hidden;
+	position: relative;
+}
+
+.header, .title{
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;  
+  position: relative;
+  width: 800px;
+  height: 200px;
+  margin-top:10%;
+  margin-right: auto;
+  margin-left: auto;
+  font-weight: bold;
+
+
+}
+.header h1, .header h2{
+  text-align: center;
+  background-color: rgb(250, 250, 250);
+  mix-blend-mode: screen;
+}
+
+.header h1{
+
+  font-size: 70px;
+  padding:20px 20px 0px 20px;
+
+}
+.header h2{
+  font-weight: 400;
+  font-size: 50px;
+  padding:0px 20px 20px 20px;
+}
+
+.title{
+  height: 150px;
+  margin-top:0;
+}
+
+.title p{
+
+  color: white;
+  font-size: 40px;
+  text-align: center;
+}
+.search-icon{
+  position: relative;
+  font-size: 30px;
+  left: -60px;
+  top: -20px;
+  right: 0;
+}
+
+.city-icon{
+  position: relative;
+  top: 5px;
+  left: -55px;
+  font-size: 40px;
+}
+
+.login {
+  cursor: pointer;
+  display: block;
+  margin-left: auto;
+  margin-right:auto;
+  border:2px solid white;    
+  height:50px;
+  border-radius:50%;
+  -moz-border-radius:50%;
+  -webkit-border-radius:50%;
+  width:50px;
+}
+
+.arrow-icon-down{
+  z-index: -1;
+  display: block;
+  position: relative;
+  color: white;
+  font-size: 40px;
+  width:50px;
+  height: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  top:-50;
+  left: -35px;
+  transition: all 0.4s ease 0s;
+  webkit-transition: all 0.4s ease 0s;
+
+}
+
+.login:hover + i{
+  top: -40px;
+}
