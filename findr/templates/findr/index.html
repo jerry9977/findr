@@ -53,15 +53,20 @@
 
 					<!-- Wrapper for slides -->
 					<div class="carousel-inner">
+
 						<div class="item active">
+							
 							<img src="{% static 'findr/img/img1.jpeg' %}" alt="Los Angeles" style="width:100%;">
+							
 						</div>
 
 						<div class="item">
+							
 							<img src="{% static 'findr/img/img2.jpeg' %}" alt="Chicago" style="width:100%;">
 						</div>
 
 						<div class="item">
+							
 							<img src="{% static 'findr/img/img3.jpeg' %}" alt="New york" style="width:100%;">
 						</div>
 					</div>
@@ -81,11 +86,22 @@
 
 
 		<div class='first-content-container'>
+			<h1 class='first-content-header'>
+				STUDENT
+			</h1>
+			<p class='first-content-paragraph'>
+				Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod 
+				tincidunt ut laoreet dolore magna aliquam erat volutpat.
+			</p>
 			<div class='content-categories'>
-				<div class='content-category'>
+
+				<a class='content-category'>
+
+					<i class='category-icon material-icons'>school</i>
+
 	                <div class='description-box'>
 	                    <div class='description-title' type="title" component="h1">
-	                        TOURIST
+	                        SCHOOL
 	                    </div>
 
 	                    <div class='description-paragraph' type="subheading" component="p">
@@ -94,26 +110,25 @@
 
 	                </div>
 
-	                <div class='register-link' >
-	                                
-	                    <a  href='../register' to="/admin">
-							<div class='register-button'>    
-								<p class='register-string'>
-	                                REGISTER
-	                            </p>
-	                            <i class="reg-arrow-icon material-icons">keyboard_arrow_right</i>
-
-	                        </div>
-	                    </a>
-	                                
+	                <div class='read-more-link' >
+						<p class='read-more-string'>
+	                        READ MORE
+	                        
+	                    </p>
+	                    <i class="read-more-arrow-icon material-icons">keyboard_arrow_right</i>
+           
 	                </div>
-	                           
-	        	</div>
 
-	        	<div class='content-category'>
+	                           
+	        	</a>
+
+	        	<a class='content-category'>
+
+					<i class='category-icon material-icons'>local_library</i>
+
 	                <div class='description-box'>
 	                    <div class='description-title' type="title" component="h1">
-	                        TOURIST
+	                        LIBRARY
 	                    </div>
 
 	                    <div class='description-paragraph' type="subheading" component="p">
@@ -122,25 +137,24 @@
 
 	                </div>
 
-	                <div class='register-link' >
-	                                
-	                    <a  href='../register' to="/admin">
-							<div class='register-button'>    
-								<p class='register-string'>
-	                                REGISTER
-	                            </p>
-	                            <i class="reg-arrow-icon material-icons">keyboard_arrow_right</i>
-
-	                        </div>
-	                    </a>
-	                                
+	                <div class='read-more-link' >
+						<p class='read-more-string'>
+	                        READ MORE
+	                        
+	                    </p>
+	                    <i class="read-more-arrow-icon material-icons">keyboard_arrow_right</i>
+           
 	                </div>
+
 	                           
-	        	</div>
-	        	<div class='content-category'>
+	        	</a>
+	        	<a class='content-category'>
+
+					<i class='category-icon material-icons'>location_city</i>
+
 	                <div class='description-box'>
 	                    <div class='description-title' type="title" component="h1">
-	                        TOURIST
+	                        CITY INFO
 	                    </div>
 
 	                    <div class='description-paragraph' type="subheading" component="p">
@@ -149,23 +163,81 @@
 
 	                </div>
 
-	                <div class='register-link' >
-	                                
-	                    <a  href='../register' to="/admin">
-							<div class='register-button'>    
-								<p class='register-string'>
-	                                REGISTER
-	                            </p>
-	                            <i class="reg-arrow-icon material-icons">keyboard_arrow_right</i>
-
-	                        </div>
-	                    </a>
-	                                
+	                <div class='read-more-link' >
+						<p class='read-more-string'>
+	                        READ MORE
+	                        
+	                    </p>
+	                    <i class="read-more-arrow-icon material-icons">keyboard_arrow_right</i>
+           
 	                </div>
+
 	                           
-	        	</div>
+	        	</a>
+	        	<a class='content-category'>
+
+					<i class='category-icon material-icons'>directions_bus</i>
+
+	                <div class='description-box'>
+	                    <div class='description-title' type="title" component="h1">
+	                        TRANSPORT
+	                    </div>
+
+	                    <div class='description-paragraph' type="subheading" component="p">
+	                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent egestas, dui a semper porttitor, felis mi sodales nunc.
+	                    </div>
+
+	                </div>
+
+	                <div class='read-more-link' >
+						<p class='read-more-string'>
+	                        READ MORE
+	                        
+	                    </p>
+	                    <i class="read-more-arrow-icon material-icons">keyboard_arrow_right</i>
+           
+	                </div>
+
+	                           
+	        	</a>
+	        	
 			</div>
 			
+		</div>
+
+
+		<div class='footer'>
+			
+			<div='footer-row'>
+				<h1 class='footer-logo'>
+					FINDR
+				</h1>
+
+				<ul class='general-site-map'>
+					<h1 class='footer-title'>
+						SITE MAP
+					</h1>
+					<li>HOME</li>
+					<li>COLLGES</li>
+					<li>LIBRARY</li>
+					<li>CITY INFO</li>
+					
+				</ul>
+
+				<ul class='general-site-functions'>
+					<h1 class='footer-title'>
+						NEED HELP?
+					</h1>
+					<li>MAP</li>
+					<li>TRANSPORT</li>
+					<li>EVENTS</li>
+				</ul>
+
+			</div>
+			
+
+
+
 		</div>
     	
 
