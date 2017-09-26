@@ -1,32 +1,41 @@
 {% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'findr/css/register.css' %}">
 <html>
     <head>
         <title>Findr</title>
     </head>
+    <div class ='root'>
+            <div class='app-frame'>
+                <div class='page-background'>
+                    </div>
+                    <div class='form-div'>
+                        <body>
+                            <h1>Register with Findr</h1>
 
-    <body>
-        <h1>Register with Findr</h1>
+                            {% if registered %}
+                            Findr says: <strong>Thank you for Registering!</strong>
+                            <a href="/findr/">Return to the homepage.</a><br />
+                            {% else %}
+                            <p id="subtitle">Findr says: <strong>Register Here!</strong><br /></p>
 
-        {% if registered %}
-        Findr says: <strong>thank you for registering!</strong>
-        <a href="/findr/">Return to the homepage.</a><br />
-        {% else %}
-        Findr says: <strong>register here!</strong><br />
+                            <form id="user_form" method="post" action="/findr/register/"
+                                    enctype="multipart/form-data">
 
-        <form id="user_form" method="post" action="/findr/register/"
-                enctype="multipart/form-data">
+                                {% csrf_token %}
 
-            {% csrf_token %}
+                                <!-- Display each form. The as_p method wraps each element in a paragraph
+                                    (<p>) element. This ensures each element appears on a new line,
+                                    making everything look neater. -->
+                                {{ user_form.as_p }}
+                                {{ profile_form.as_p }}
 
-            <!-- Display each form. The as_p method wraps each element in a paragraph
-                 (<p>) element. This ensures each element appears on a new line,
-                 making everything look neater. -->
-            {{ user_form.as_p }}
-            {{ profile_form.as_p }}
-
-            <!-- Provide a button to click to submit the form. -->
-            <input type="submit" name="submit" value="Register" />
-        </form>
-        {% endif %}
-    </body>
+                                <!-- Provide a button to click to submit the form. -->
+                                <input id="register-button" type="submit" name="submit" value="SIGN UP" />
+                            </form>
+                            <h3 id="returnlogin">Already Registered? <a href="../login">Login Now</a></h3>
+                            {% endif %}
+                        </body>
+                    </div>
+                </div>
+            </div>
 </html>

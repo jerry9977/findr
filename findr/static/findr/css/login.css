@@ -1,0 +1,135 @@
+/*.app-frame{
+    position: relative;
+    height: 500px;
+    width:auto;
+    top:100px;
+    margin-right: auto;
+  }
+*/
+.page-background:before {
+  content: "";
+  position: fixed;
+  top: -5%;
+  left: -5%;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  display: block;
+
+  background-image: url(../img/img1.jpeg);
+  background-size:cover;
+  width: 110%;
+  height: 110%;
+  
+  -webkit-filter: blur(10px);
+  -moz-filter: blur(10px);
+  -o-filter: blur(10px);
+  -ms-filter: blur(10px);
+  filter: blur(10px);
+}
+
+.page-background{
+
+	overflow: hidden;
+	position: relative;
+}
+
+.form-div {
+    position: relative;
+    z-index: 99 !important;
+    width: 500px;
+    height: 325px;
+    margin-left: auto;
+    margin-right: auto;
+    top: 50px;
+}
+
+h1 {
+    position: relative;
+    cursor: default;
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	text-align: center;
+}
+
+#login_form {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    height: 300px;
+    border-radius: 6px 6px 0 0;
+    border: 2px solid black;
+    box-shadow: 5px 5px 10px darkgrey;
+    background-color: white;
+}
+
+#user-label {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    left:40%;
+    top:10px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	text-align: center;
+}
+
+#pass-label {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    left:40%;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	text-align: center;
+}
+
+.inputbox {
+    position:relative;
+    width:300px;
+    height:40px;
+    left:18%;
+    top:10%;
+    padding-left: 20px;
+    background-color: #EDEDEC;
+    border: none;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size:16px;
+}
+
+#login-button {
+    position:relative;
+    cursor: pointer;
+    width:300px;
+    height:40px;
+    left: 18%;
+    top:20%;
+    border: none;
+    background-color: #1859F1;
+    color: #EDEDEC;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+    transition: all .5s ease-in-out;
+}
+
+#login-button:hover {
+    transform: scale(1.05);
+}
+
+p {
+    position:relative;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: darkgrey;
+    top:-25%;
+}
+
+ a {
+    position:relative;
+    margin-left: auto;
+    margin-right: auto;
+    text-decoration: none;
+    color: #15AB8F;
+ }

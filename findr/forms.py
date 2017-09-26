@@ -15,6 +15,11 @@ class UserForm(forms.ModelForm):
         model = User
         fields = ('username', 'email', 'password')
         exclude = ('user',)
+        help_texts = {
+            'username': '',
+            'email': '',
+            'password': '',
+        }
 
 class UserProfileForm(forms.ModelForm):
     usertype = forms.ChoiceField(choices=USERTYPES, required=True )
