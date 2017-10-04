@@ -4,6 +4,7 @@ from django.shortcuts import render
 from django.http import HttpResponseRedirect, HttpResponse
 from .forms import UserForm, UserProfileForm
 from django.contrib.auth import authenticate, login
+from .models import *
 
 def index(request):
 
@@ -113,3 +114,16 @@ def user_login(request):
         # No context variables to pass to the template system, hence the
         # blank dictionary object...
         return render(request, 'findr/login.htm', {})
+
+
+def searchtest(request):
+
+    if request.method == "POST":
+        search_target = request.POST['search']
+
+        results = CityInfoDetail.objects.filter(name__icontains=search_target)
+        
+        return render(request, "findr/resultspage.html", {'CityInfoDetails':results})
+    else:
+        return render(request, "findr/searchtest.html", {})
+

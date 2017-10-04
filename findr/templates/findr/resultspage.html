@@ -1,0 +1,16 @@
+{% if CityInfoDetails %}
+
+{% for each_CityInfoDetail in CityInfoDetails %}
+    
+    <!--Upon successful search book image with hyperlink appears -->
+    <!-- <img src="{{each_book.image.url}}" alt="No Image"></a> -->
+    <p>{{each_CityInfoDetail.category}}</p>
+    <p>{{each_CityInfoDetail.name}}</p>
+    <p>{{each_CityInfoDetail.email}}</p>
+{% endfor %}
+
+
+{% else %}
+
+{% endif %}
+

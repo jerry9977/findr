@@ -1,0 +1,6 @@
+<form name='search-form' method="POST" action="/findr/searchtest/">
+	this is search test
+	{% csrf_token %}
+    <input type="text" name="search" placeholder="Search"/>
+    <input type="submit" value="submit" />
+</form>
