@@ -7,7 +7,10 @@ from django.contrib.auth import authenticate, login
 from .models import *
 
 def index(request):
+    # if request.method == 'GET':
 
+    #     return render(request, 'findr/searchtest.html')
+    #     pass
     return render(request, 'findr/index.html')
 
 # def index(request):
@@ -121,9 +124,16 @@ def searchtest(request):
     if request.method == "POST":
         search_target = request.POST['search']
 
-        results = CityInfoDetail.objects.filter(name__icontains=search_target)
+        results = CityInfoDetail.objects.filter(name__iexact=search_target)
         
         return render(request, "findr/resultspage.html", {'CityInfoDetails':results})
     else:
         return render(request, "findr/searchtest.html", {})
+
+
+def category(request, category):
+    results = CityInfoDetail.objects.filter(category__name__iexact=category)
+        
+    return render(request, "findr/resultspage.html", {'CityInfoDetails':results})
+
 
