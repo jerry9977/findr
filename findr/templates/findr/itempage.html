@@ -1,0 +1,70 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'findr/css/google-font-material.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'findr/css/reset.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'findr/css/menubar.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'findr/css/footer.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'findr/css/itempage.css' %}" />
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyApbnldHTuNCZMFHpc81ur-OFzCTdyJki0"></script>
+
+<div class='root'>
+	<div class='app-frame'>
+		
+
+		<div class='menu-bar'>
+			<div class='logo-wrapper'>
+				<h1 href='#'class='logo'>
+				Findr
+				</h1>
+			</div>
+			
+			<div class='search-container'>     
+				<input  class='searchbar'  placeholder="Search..."/> 
+				<i class="search-icon material-icons">search</i>
+            </div>
+            
+
+			
+			<a href="/findr/login/" class='logout-button'>Sign Out</a>
+
+		</div>
+
+
+		<iframe class= 'locationGoogleMap'src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3522.684221298304!2d153.42286291569837!3d-28.00355604632275!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b91057aba149ea7%3A0x6162df26e42d8621!2sK+Resort!5e0!3m2!1sen!2sau!4v1468319023374" frameborder="0" allowfullscreen></iframe>
+		
+		<div class='footer'>	
+			<div='footer-row'>
+				<h1 class='footer-logo'>
+					FINDR
+				</h1>
+
+				<ul class='general-site-map'>
+					<h1 class='footer-title'>
+						SITE MAP
+					</h1>
+					<li>HOME</li>
+					<li>COLLGES</li>
+					<li>LIBRARY</li>
+					<li>CITY INFO</li>
+					
+				</ul>
+
+				<ul class='general-site-functions'>
+					<h1 class='footer-title'>
+						NEED HELP?
+					</h1>
+					<li>MAP</li>
+					<li>TRANSPORT</li>
+					<li>EVENTS</li>
+				</ul>
+
+			</div>
+		</div>
+
+
+
+
+	</div>
+</div>
+
+
+

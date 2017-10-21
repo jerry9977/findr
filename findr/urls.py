@@ -9,7 +9,7 @@ urlpatterns = [
     url(r'^register/', views.register, name='register'),
     url(r'^login/', views.user_login, name='login'),
     url(r'^welcome/', views.welcome, name='welcome'),
-
+    url(r'^itempage/', views.itempage, name='welcome'),
     url(r'(?P<category>.*)/$', views.category),
  
 

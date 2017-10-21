@@ -5,6 +5,10 @@ from django.http import HttpResponseRedirect, HttpResponse
 from .forms import UserForm, UserProfileForm
 from django.contrib.auth import authenticate, login
 from .models import *
+from django.core.paginator import *
+from django.contrib.auth.models import User
+from django.contrib.auth.hashers import check_password
+from django.core.exceptions import ObjectDoesNotExist, MultipleObjectsReturned
 
 def index(request):
     # if request.method == 'GET':
@@ -89,27 +93,101 @@ def user_login(request):
         username = request.POST['username']
         password = request.POST['password']
 
+##        class SettingsBackend(object):
+##            def has_perm(self, user_obj, perm, obj=None):
+##                if user_obj.username == settings.ADMIN_LOGIN:
+##                    return True
+##                else:
+##                    return False
+##
+##            def typeAuth(username=None, password=None, usertype=None):
+##                login_valid = (settings.ADMIN_LOGIN == username)
+##                pwd_valid = check_password(password, settings.ADMIN_PASSWORD)
+##                type_valid = (settings.ADMIN_USERTYPE == usertype)
+##                if login_valid and pwd_valid and type_valid:
+##                    try:
+##                        user = User.objects.get(username=username)
+##                    except User.DoesNotExist:
+##                        # Create a new user. Note that we can set password
+##                        # to anything, because it won't be checked; the password
+##                        # from settings.py will.
+##                        user = User(username=username, password='get from settings.py')
+##                        user.is_staff = True
+##                        user.is_superuser = True
+##                        user.save()
+##                    return user
+##                return None
+##
+##            def get_user(self, user_id):
+##                try:
+##                   return User.objects.get(pk=user_id)
+##                except User.DoesNotExist:
+##                   return None
+
+        USERTYPES = (
+        ('1', 'Student'),
+        ('2', 'Tourist'),
+        ('3', 'Businessman'),
+        )
         # Use Django's machinery to attempt to see if the username/password
         # combination is valid - a User object is returned if it is.
-        user = authenticate(username=username, password=password)
+        userAuth = authenticate(username=username, password=password)
+        test = User.objects.get(username=username)
 
+##        student = authenticate(username=username, password=password, usertype='Student')
+##        tourist = authenticate(username=username, password=password, usertype='Tourist')
+##        businessman = authenticate(username=username, password=password, usertype='Businessman')
+        
         # If we have a User object, the details are correct.
         # If None (Python's way of representing the absence of a value), no user
         # with matching credentials was found.
-        if user:
+        if userAuth:
             # Is the account active? It could have been disabled.
-            if user.is_active:
+            if userAuth.is_active:
                 # If the account is valid and active, we can log the user in.
                 # We'll send the user back to the homepage.
-                login(request, user)
-                return HttpResponseRedirect('/findr/index')
+
+                #UserProfile.objects.all().values_list('usertype', flat=True)
+                try:
+                    student = UserProfile.objects.get(usertype='1', user=test)
+                except ObjectDoesNotExist:
+                    student = None
+
+                try:
+                    tourist = UserProfile.objects.get(usertype='2', user=test)
+                except ObjectDoesNotExist:
+                    tourist = None
+
+                try:
+                    businessman = UserProfile.objects.get(usertype='3', user=test)
+                except ObjectDoesNotExist:
+                    businessman = None
+                    
+                if student is not None:
+                    login(request, userAuth)
+                    return HttpResponseRedirect('/findr/index')
+
+                elif tourist is not None:
+                    login(request, userAuth)
+                    return HttpResponseRedirect('/findr/tourist')
+
+                elif businessman is not None:
+                    login(request, userAuth)
+                    return HttpResponseRedirect('/findr/businessman')
+
+                else:
+                    # An inactive account was used - no logging in!
+                    return HttpResponse("Your Findr account is disabled.")
+                
             else:
                 # An inactive account was used - no logging in!
                 return HttpResponse("Your Findr account is disabled.")
         else:
             # Bad login details were provided. So we can't log the user in.
+            #"Invalid login details supplied."
             print ("Invalid login details: {0}, {1}".format(username, password))
-            return HttpResponse("Invalid login details supplied.")
+            return HttpResponse(UserProfile.objects.all().values_list('usertype'))
+
 
     # The request is not a HTTP POST, so display the login form.
     # This scenario would most likely be a HTTP GET.
@@ -119,21 +197,38 @@ def user_login(request):
         return render(request, 'findr/login.htm', {})
 
 
+
 def searchtest(request):
 
     if request.method == "POST":
         search_target = request.POST['search']
 
-        results = CityInfoDetail.objects.filter(name__iexact=search_target)
+        result = CityInfoDetail.objects.filter(name__iexact=search_target)
         
         return render(request, "findr/resultspage.html", {'CityInfoDetails':results})
     else:
         return render(request, "findr/searchtest.html", {})
 
 
+
+
+
+
 def category(request, category):
-    results = CityInfoDetail.objects.filter(category__name__iexact=category)
-        
-    return render(request, "findr/resultspage.html", {'CityInfoDetails':results})
+    result_list = CityInfoDetail.objects.filter(category__name__iexact=category)
+    paginator = Paginator(result_list, 4)
+    page = request.GET.get('page')
+
+    try:
+        results = paginator.page(page)
+    except PageNotAnInteger:
+
+        results = paginator.page(1)
+    except EmptyPage:
+        results = paginator.page(paginator.num_pages)
+
+    return render(request, "findr/resultspage.html", {'results':results, 'category':category})
 
 
+def itempage(request):
+    return render(request, 'findr/itempage.html')

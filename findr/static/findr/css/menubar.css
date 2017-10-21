@@ -5,7 +5,8 @@
 	width: auto;
 	height: 50px;
 	background-color: #3f51b5;
-	font-family: "Roboto", "Helvetica", "Arial", sans-serif;	color:white;
+    color:white;
+	font-family: "Roboto", "Helvetica", "Arial", sans-serif;
 	font-weight: 500;
 
 }
@@ -42,7 +43,7 @@
     border: none;
     font-size: 10pt;
     left: 200px;
-    color: '#262626';
+    color: black;
         
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
@@ -84,10 +85,12 @@
 }
 
 
-.logo, .login-button{
+.logo, .logout-button{
+    text-decoration: none;
 	position: relative;
 	text-align: center center;
 	cursor: pointer;
+    color: white;
 }
 
 .logo-wrapper{
@@ -99,12 +102,17 @@
 	margin-left: 20px;
 	margin-right: 20px;
 	font-size: 21px;
+    text-decoration: none;
+    color: white;
 }
 
-.login-button{
-	margin-left: 20px;
+.logout-button{
+	/*margin-left: 20px;*/
 	margin-right: 20px;
 	font-size: 15px;
 }
 
-
+.logout-button:hover{
+    color: white;
+    text-decoration: none;
+}

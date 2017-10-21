@@ -1,16 +1,127 @@
-{% if CityInfoDetails %}
-
-{% for each_CityInfoDetail in CityInfoDetails %}
-    
-    <!--Upon successful search book image with hyperlink appears -->
-    <!-- <img src="{{each_book.image.url}}" alt="No Image"></a> -->
-    <p>{{each_CityInfoDetail.category}}</p>
-    <p>{{each_CityInfoDetail.name}}</p>
-    <p>{{each_CityInfoDetail.email}}</p>
-{% endfor %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'findr/css/google-font-material.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'findr/css/reset.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'findr/css/menubar.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'findr/css/resultspage.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'findr/css/footer.css' %}" />
 
 
-{% else %}
+<div class='root'>
+	<div class='app-frame'>
+		
 
-{% endif %}
+
+		<div class='menu-bar'>
+			<div class='logo-wrapper'>
+				<h1 href='#'class='logo'>
+				Findr
+				</h1>
+			</div>
+		
+
+			
+			<a href="/findr/login/" class='logout-button'>Sign Out</a>
+
+		</div>
+
+		<h1 class='search-target'>
+			{{ category }}
+		</h1>
+
+		<div class='search-container'>
+				<input  class='searchbar'  placeholder="Search..."/> 
+				<i class="search-icon material-icons">search</i>
+				<div class="searchbar-border-bottom"></div>
+        </div>
+
+
+		<div class='results-list'>
+
+			
+			{% if results %}
+
+				{% for each_result in results %}
+
+				    <div class='result-content'>
+				    	<img src="{% static 'findr/img/img1.jpeg' %}" alt="Los Angeles">
+
+					   	<div class='result-info'>
+						    <p>{{each_result.category}}</p>
+						    <a href='../itempage/'>{{each_result.name}}</a>
+						    <p>{{each_result.email}}</p>
+						</div>
+				    </div>
+				    
+				{% endfor %}
+
+			{% endif %}
+			
+		</div>
+
+
+		<div class="pagination">
+			{% if results.has_previous %}
+				<a href="?page={{results.previous_page_number}}">&laquo;</a>
+			{% else %}
+				<a href="#">&laquo;</a>
+			{% endif %}
+
+
+			{% for page_num in results.paginator.page_range %}
+
+				{% if page_num == results.number %}
+					<a class='active' href="?page={{page_num}}">{{page_num}}</a>
+				{% else%}
+					<a href="?page={{page_num}}">{{page_num}}</a>
+				{% endif %}
+
+			{% endfor %}
+
+			{% if results.has_next %}
+				<a href="?page={{results.next_page_number}}">&raquo;</a>
+			{% else %}
+				<a href="#">&raquo;</a>
+			{% endif %}
+		</div>
+
+
+		
+		<div class='footer'>	
+			<div='footer-row'>
+				<h1 class='footer-logo'>
+					FINDR
+				</h1>
+
+				<ul class='general-site-map'>
+					<h1 class='footer-title'>
+						SITE MAP
+					</h1>
+					<li>HOME</li>
+					<li>COLLGES</li>
+					<li>LIBRARY</li>
+					<li>CITY INFO</li>
+					
+				</ul>
+
+				<ul class='general-site-functions'>
+					<h1 class='footer-title'>
+						NEED HELP?
+					</h1>
+					<li>MAP</li>
+					<li>TRANSPORT</li>
+					<li>EVENTS</li>
+				</ul>
+
+			</div>
+		</div>
+
+
+
+
+	</div>
+</div>
+
+
+
+
 

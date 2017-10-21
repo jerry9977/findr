@@ -1,0 +1,35 @@
+.footer{
+	background-color: #464646;
+	height: 300px;
+}
+
+
+
+.footer-logo,
+.general-site-map,
+.general-site-functions{
+	position: relative;
+	float: left;
+	display: table;
+	margin-left: 3%;
+	top: 20%;
+	width: 30%;
+	color: white;
+	text-align: left;
+	vertical-align: middle;
+
+	font-family: "Roboto", "Helvetica", "Arial", sans-serif;	
+	
+}
+
+
+.general-site-map h1,
+.general-site-map li,
+.general-site-functions h1,
+.general-site-functions li{
+	padding-bottom: 20px;
+}
+
+.footer-title{
+	color: #c2c2c2;
+}
