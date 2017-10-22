@@ -15,7 +15,28 @@ def index(request):
 
     #     return render(request, 'findr/searchtest.html')
     #     pass
-    return render(request, 'findr/index.html')
+    return render(request, 'findr/student.html')
+
+def tourist(request):
+    # if request.method == 'GET':
+
+    #     return render(request, 'findr/searchtest.html')
+    #     pass
+    return render(request, 'findr/tourist.html')
+
+def businessman(request):
+    # if request.method == 'GET':
+
+    #     return render(request, 'findr/searchtest.html')
+    #     pass
+    return render(request, 'findr/businessman.html')
+
+def admin(request):
+    # if request.method == 'GET':
+
+    #     return render(request, 'findr/searchtest.html')
+    #     pass
+    return render(request, 'findr/admin.html')
 
 # def index(request):
 #     retdict = {'articles': Article.objects.all(),}
@@ -93,50 +114,16 @@ def user_login(request):
         username = request.POST['username']
         password = request.POST['password']
 
-##        class SettingsBackend(object):
-##            def has_perm(self, user_obj, perm, obj=None):
-##                if user_obj.username == settings.ADMIN_LOGIN:
-##                    return True
-##                else:
-##                    return False
-##
-##            def typeAuth(username=None, password=None, usertype=None):
-##                login_valid = (settings.ADMIN_LOGIN == username)
-##                pwd_valid = check_password(password, settings.ADMIN_PASSWORD)
-##                type_valid = (settings.ADMIN_USERTYPE == usertype)
-##                if login_valid and pwd_valid and type_valid:
-##                    try:
-##                        user = User.objects.get(username=username)
-##                    except User.DoesNotExist:
-##                        # Create a new user. Note that we can set password
-##                        # to anything, because it won't be checked; the password
-##                        # from settings.py will.
-##                        user = User(username=username, password='get from settings.py')
-##                        user.is_staff = True
-##                        user.is_superuser = True
-##                        user.save()
-##                    return user
-##                return None
-##
-##            def get_user(self, user_id):
-##                try:
-##                   return User.objects.get(pk=user_id)
-##                except User.DoesNotExist:
-##                   return None
 
         USERTYPES = (
         ('1', 'Student'),
         ('2', 'Tourist'),
         ('3', 'Businessman'),
         )
+        
         # Use Django's machinery to attempt to see if the username/password
         # combination is valid - a User object is returned if it is.
         userAuth = authenticate(username=username, password=password)
-        test = User.objects.get(username=username)
-
-##        student = authenticate(username=username, password=password, usertype='Student')
-##        tourist = authenticate(username=username, password=password, usertype='Tourist')
-##        businessman = authenticate(username=username, password=password, usertype='Businessman')
         
         # If we have a User object, the details are correct.
         # If None (Python's way of representing the absence of a value), no user
@@ -144,37 +131,56 @@ def user_login(request):
         if userAuth:
             # Is the account active? It could have been disabled.
             if userAuth.is_active:
-                # If the account is valid and active, we can log the user in.
+                # If the account is valid and active, we can now check user types.
                 # We'll send the user back to the homepage.
+                
+                # Gets username from the user table in the database
+                dbuser = User.objects.get(username=username)
 
-                #UserProfile.objects.all().values_list('usertype', flat=True)
+                # Check whether user type is a student
                 try:
-                    student = UserProfile.objects.get(usertype='1', user=test)
+                    student = UserProfile.objects.get(usertype='1', user=dbuser)
                 except ObjectDoesNotExist:
                     student = None
 
+                # Check whether user type is a tourist
                 try:
-                    tourist = UserProfile.objects.get(usertype='2', user=test)
+                    tourist = UserProfile.objects.get(usertype='2', user=dbuser)
                 except ObjectDoesNotExist:
                     tourist = None
 
+                # Check whether user type is a businessman
                 try:
-                    businessman = UserProfile.objects.get(usertype='3', user=test)
+                    businessman = UserProfile.objects.get(usertype='3', user=dbuser)
                 except ObjectDoesNotExist:
                     businessman = None
-                    
+
+                # Check whether user is an admin
+                # If user is an admin, redirects admin to admin home page
+                if userAuth.is_superuser:
+                    login(request, userAuth)
+                    return HttpResponseRedirect('/findr/admin')
+
+                # Check whether user is a student by using "if is not None"
+                # If user is a student, redirects user to student home page 
                 if student is not None:
                     login(request, userAuth)
-                    return HttpResponseRedirect('/findr/index')
+                    return HttpResponseRedirect('/findr/student')
 
+                # Check whether user is a tourist by using "if is not None"
+                # If user is a tourist, redirects user to tourist home page 
                 elif tourist is not None:
                     login(request, userAuth)
                     return HttpResponseRedirect('/findr/tourist')
 
+                # Check whether user is a businessman by using "if is not None"
+                # If user is a businessman, redirects user to businessman home page 
                 elif businessman is not None:
                     login(request, userAuth)
                     return HttpResponseRedirect('/findr/businessman')
-
+                
+                # If there user exists and is not a student, tourist or businessman
+                # Output the message saying account has been disabled
                 else:
                     # An inactive account was used - no logging in!
                     return HttpResponse("Your Findr account is disabled.")
@@ -186,7 +192,7 @@ def user_login(request):
             # Bad login details were provided. So we can't log the user in.
             #"Invalid login details supplied."
             print ("Invalid login details: {0}, {1}".format(username, password))
-            return HttpResponse(UserProfile.objects.all().values_list('usertype'))
+            return HttpResponse("Invalid login details supplied.")
 
 
     # The request is not a HTTP POST, so display the login form.
