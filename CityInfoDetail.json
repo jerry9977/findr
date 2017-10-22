@@ -1,0 +1,212 @@
+[
+{
+  "model": "findr.cityinfodetail",
+  "pk": 1,
+  "fields": {
+    "category": 1,
+    "name": "Queensland University of Technology",
+    "description": "QUT is a top Australian university providing quality undergraduate and postgraduate courses.",
+    "address": "2 George St, Brisbane City QLD, 4000",
+    "department": "Education",
+    "email": "askqut@qut.edu.au",
+    "website": "https://www.qut.edu.au/",
+    "picture": "thumbnail_images/gardens-point.jpg"
+  }
+},
+{
+  "model": "findr.cityinfodetail",
+  "pk": 2,
+  "fields": {
+    "category": 1,
+    "name": "University of Queensland",
+    "description": "Programs, majors and courses on offer at The University of Queensland.",
+    "address": "St Lucia QLD, 4072",
+    "department": "Education",
+    "email": "help@its.uq.edu.au",
+    "website": "https://www.uq.edu.au",
+    "picture": "thumbnail_images/campus-thumb-stlucia.jpg"
+  }
+},
+{
+  "model": "findr.cityinfodetail",
+  "pk": 3,
+  "fields": {
+    "category": 6,
+    "name": "The Point Brisbane Hotel",
+    "description": "A luxury stay in Kangaroo Point awaits you at The Point Brisbane Hotel.",
+    "address": "21 Lambert Street, Kangaroo Point, QLD",
+    "department": "Accommodation",
+    "email": "N/A",
+    "website": "https://www.wotif.com/Brisbane-Hotels-The-Point-Brisbane-Hotel.h425374.Hotel-Information",
+    "picture": "thumbnail_images/point-brisbane-hotel.jpg"
+  }
+},
+{
+  "model": "findr.cityinfodetail",
+  "pk": 4,
+  "fields": {
+    "category": 6,
+    "name": "Great Southern Hotel Brisbane",
+    "description": "Great Southern Hotel Brisbane puts you in the heart of Brisbane, within just a 10-minute stroll of Treasury Casino.",
+    "address": "103 George Street, Brisbane, QLD",
+    "department": "Accommodation",
+    "email": "N/A",
+    "website": "https://www.wotif.com/Brisbane-Hotels-Great-Southern-Hotel-Brisbane.h82665.Hotel-Information",
+    "picture": "thumbnail_images/great-southern-hotel.jpg"
+  }
+},
+{
+  "model": "findr.cityinfodetail",
+  "pk": 5,
+  "fields": {
+    "category": 6,
+    "name": "Apartments Downtown",
+    "description": "At Apartments Downtown you'll be within a 20-minute stroll of popular places like Queen Street Mall and Roma Street Parkland.",
+    "address": "223 Leichhardt Street, Spring Hill, QLD",
+    "department": "Accommodation",
+    "email": "N/A",
+    "website": "https://www.wotif.com/Brisbane-Hotels-Apartments-Downtown.h16018259.Hotel-Information",
+    "picture": "thumbnail_images/apartments-downtown.jpg"
+  }
+},
+{
+  "model": "findr.cityinfodetail",
+  "pk": 6,
+  "fields": {
+    "category": 6,
+    "name": "Ibis Styles Brisbane Hotel",
+    "description": "Ibis Styles Brisbane Elizabeth Street places you in the center of Brisbane, steps from Brisbane Square Library.",
+    "address": "40 Elizabeth Street, Brisbane, QLD",
+    "department": "Accommodation",
+    "email": "N/A",
+    "website": "https://www.wotif.com/Brisbane-Hotels-Ibis-Styles-Brisbane-Elizabeth-Street.h13340702.Hotel-Information",
+    "picture": "thumbnail_images/ibis-styles-hotel.jpg"
+  }
+},
+{
+  "model": "findr.cityinfodetail",
+  "pk": 7,
+  "fields": {
+    "category": 10,
+    "name": "Botanic Gardens",
+    "description": "The Brisbane Botanic Gardens Mount Coot-tha are recognised as Queensland's premier subtropical botanic gardens.",
+    "address": "Alice St, Brisbane City QLD 4000",
+    "department": "Park",
+    "email": "N/A",
+    "website": "https://www.brisbane.qld.gov.au/facilities-recreation/parks-venues/parks/brisbane-botanic-gardens-mount-coot-tha",
+    "picture": "thumbnail_images/botanic-gardens.jpg"
+  }
+},
+{
+  "model": "findr.cityinfodetail",
+  "pk": 8,
+  "fields": {
+    "category": 10,
+    "name": "Alma Park Zoo",
+    "description": "Alma Park Zoo is set on 40 acres with 12 acres set under a rainforest canopy in Dakabin, Queensland.",
+    "address": "Alma Road, DAKABIN QLD 4503",
+    "department": "Zoo",
+    "email": "N/A",
+    "website": "http://www.almaparkzoo.com.au",
+    "picture": "thumbnail_images/alma-park-zoo.JPG"
+  }
+},
+{
+  "model": "findr.cityinfodetail",
+  "pk": 9,
+  "fields": {
+    "category": 10,
+    "name": "BBQ Tonight",
+    "description": "BBQ Tonight Restaurant is an authentic Pakistani and Indian food restaurant and 100% HALAL.",
+    "address": "2120 Logan Rd, Upper Mount Gravatt QLD 4122",
+    "department": "Restaurant",
+    "email": "info@bbqtonight.com.au",
+    "website": "http://www.bbqtonight.com.au",
+    "picture": "thumbnail_images/bbq-tonight-restaurant.jpg"
+  }
+},
+{
+  "model": "findr.cityinfodetail",
+  "pk": 10,
+  "fields": {
+    "category": 10,
+    "name": "Museum of Brisbane",
+    "description": "Museum of Brisbane brings our city\u2019s vibrant art, culture and history to life through our exhibitions, workshops, tours and etc",
+    "address": "City Hall, 64 Adelaide St, Brisbane City QLD 4000",
+    "department": "Museum",
+    "email": "info@museumofbrisbane.com.au",
+    "website": "http://www.museumofbrisbane.com.au",
+    "picture": "thumbnail_images/museum-of-brisbane.jpeg"
+  }
+},
+{
+  "model": "findr.cityinfodetail",
+  "pk": 11,
+  "fields": {
+    "category": 10,
+    "name": "Westfield Garden City",
+    "description": "Find Westfield Garden City's opening and trading hours for today, this week and special shopping days.",
+    "address": "Logan Rd & Kessels Rd, Upper Mount Gravatt QLD 4122",
+    "department": "Mall",
+    "email": "cgardencity@scentregroup.com",
+    "website": "https://www.westfield.com.au/gardencity",
+    "picture": "thumbnail_images/garden-city.jpg"
+  }
+},
+{
+  "model": "findr.cityinfodetail",
+  "pk": 12,
+  "fields": {
+    "category": 7,
+    "name": "Suncorp",
+    "description": "Suncorp Group Limited is a trusted provider of financial services and solutions.",
+    "address": "Westfield Garden City, 1044 Logan Road, Upper Mount Gravatt QLD 4122",
+    "department": "Business",
+    "email": "CourtProcessDesk@suncorp.com.au",
+    "website": "http://www.suncorp.com.au",
+    "picture": "thumbnail_images/suncorp-logo.png"
+  }
+},
+{
+  "model": "findr.cityinfodetail",
+  "pk": 13,
+  "fields": {
+    "category": 7,
+    "name": "Brisbane Airport Corporation",
+    "description": "The organisation responsible for operating and developing Brisbane Airport.",
+    "address": "11 The Circuit, Brisbane Airport QLD 4008",
+    "department": "Business",
+    "email": "park@bne.com.au",
+    "website": "http://www.bne.com.au/",
+    "picture": "thumbnail_images/Airport_20140901_wide.jpg"
+  }
+},
+{
+  "model": "findr.cityinfodetail",
+  "pk": 14,
+  "fields": {
+    "category": 2,
+    "name": "Brisbane City Council Library",
+    "description": "Council libraries provide a wide range of services including book clubs, reading programs, computer training and events.",
+    "address": "Upper Mount Gravatt QLD 4122",
+    "department": "Education",
+    "email": "N/A",
+    "website": "https://www.brisbane.qld.gov.au/libcatalogue",
+    "picture": "thumbnail_images/Garden-City-Library.jpg"
+  }
+},
+{
+  "model": "findr.cityinfodetail",
+  "pk": 15,
+  "fields": {
+    "category": 2,
+    "name": "Corinda Library",
+    "description": "Corinda Library is located at 641 Oxley Road, and has activities specifically for children, including children\u2019s storytime.",
+    "address": "641 Oxley Rd, Brisbane QLD 4075",
+    "department": "Education",
+    "email": "N/A",
+    "website": "https://www.brisbane.qld.gov.au/facilities-recreation/libraries/opening-hours-locations/corinda-library",
+    "picture": "thumbnail_images/corinda-library.jpg"
+  }
+}
+]

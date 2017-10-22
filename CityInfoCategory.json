@@ -1,0 +1,37 @@
+[
+{
+  "model": "findr.cityinfocategory",
+  "pk": 1,
+  "fields": {
+    "name": "College"
+  }
+},
+{
+  "model": "findr.cityinfocategory",
+  "pk": 2,
+  "fields": {
+    "name": "Library"
+  }
+},
+{
+  "model": "findr.cityinfocategory",
+  "pk": 6,
+  "fields": {
+    "name": "Hotel"
+  }
+},
+{
+  "model": "findr.cityinfocategory",
+  "pk": 7,
+  "fields": {
+    "name": "Industry"
+  }
+},
+{
+  "model": "findr.cityinfocategory",
+  "pk": 10,
+  "fields": {
+    "name": "Entertainment"
+  }
+}
+]
