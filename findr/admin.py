@@ -15,8 +15,8 @@ class UserProfileAdmin(admin.ModelAdmin):
 
 
 class CityInfoDetailAdmin(admin.ModelAdmin):
-    list_display = ('category','name', 'address',)
-    list_editable = ('name', 'address',)
+    list_display = ('category','name', 'description', 'address', 'website', 'picture')
+    list_editable = ('name', 'description', 'address')
 
 # class resultCollege(admin.ModelAdmin):
 #     list_display = ['name', 'address']

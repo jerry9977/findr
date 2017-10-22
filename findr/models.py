@@ -63,9 +63,12 @@ class CityInfoCategory(models.Model):
 class CityInfoDetail(models.Model):
     category = models.ForeignKey(CityInfoCategory)
     name = models.CharField(max_length=128)
+    description = models.CharField(max_length=128)
     address = models.CharField(max_length=128)
     department = models.CharField(max_length=128)
     email = models.CharField(max_length=128)
+    website = models.URLField(blank=True)
+    picture = models.ImageField(upload_to='thumbnail_images', blank=True)
     objects = models.Manager()
     def __str__(self):
         return self.name
