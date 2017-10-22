@@ -86,7 +86,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'findr',
         'USER': 'root',
-        'PASSWORD': 'yrrej9977',
+        'PASSWORD': 'secret',
         'HOST': '127.0.0.1',
         'PORT': '3306',
         
@@ -132,3 +132,7 @@ USE_TZ = True
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
 STATIC_URL = '/static/'
+
+MEDIA_DIR = os.path.join(PROJECT_ROOT, 'media')
+MEDIA_ROOT = MEDIA_DIR
+MEDIA_URL = '/media/'
