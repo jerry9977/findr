@@ -46,9 +46,13 @@
 				    	<img src="{% static 'findr/img/img1.jpeg' %}" alt="Los Angeles">
 
 					   	<div class='result-info'>
-						    <p>{{each_result.category}}</p>
-						    <a href='../itempage/'>{{each_result.name}}</a>
-						    <p>{{each_result.email}}</p>
+							<p>Category: {{each_result.category}}</p>
+						    </br><p>Department: {{each_result.department}}</p>
+							</br><p>Name: <a href='../itempage/'>{{each_result.name}}</a></p>
+							</br><p>Description: {{each_result.description}}</p>
+							</br><p>Address: {{each_result.address}}</p>
+							</br><p>Email: {{each_result.email}}</p>
+							</br><p>Website: {{each_result.website}}</p>
 						</div>
 				    </div>
 				    
@@ -97,9 +101,9 @@
 						SITE MAP
 					</h1>
 					<li>HOME</li>
-					<li>COLLGES</li>
-					<li>LIBRARY</li>
-					<li>CITY INFO</li>
+					<li><a class='a-all' href="/findr/college">COLLGES</a></li>
+					<li><a class='a-all' href="/findr/library">LIBRARY<a></li>
+					<li><a class='a-all' href="/findr/cityinfo">CITY INFO</a></li>
 					
 				</ul>
 
@@ -108,8 +112,8 @@
 						NEED HELP?
 					</h1>
 					<li>MAP</li>
-					<li>TRANSPORT</li>
-					<li>EVENTS</li>
+					<li><a class='a-all' href="https://translink.com.au/">TRANSPORT</a></li>
+					<li><a class='a-all' href="/findr/event">EVENTS</a></li>
 				</ul>
 
 			</div>
