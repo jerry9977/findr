@@ -1,5 +1,117 @@
 [
 {
+  "model": "contenttypes.contenttype",
+  "pk": 1,
+  "fields": {
+    "app_label": "admin",
+    "model": "logentry"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 2,
+  "fields": {
+    "app_label": "auth",
+    "model": "user"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 3,
+  "fields": {
+    "app_label": "auth",
+    "model": "permission"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 4,
+  "fields": {
+    "app_label": "auth",
+    "model": "group"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 5,
+  "fields": {
+    "app_label": "contenttypes",
+    "model": "contenttype"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 6,
+  "fields": {
+    "app_label": "sessions",
+    "model": "session"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 7,
+  "fields": {
+    "app_label": "findr",
+    "model": "cityinfocategory"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 8,
+  "fields": {
+    "app_label": "findr",
+    "model": "cityinfodetail"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 9,
+  "fields": {
+    "app_label": "findr",
+    "model": "page"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 10,
+  "fields": {
+    "app_label": "findr",
+    "model": "category"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 11,
+  "fields": {
+    "app_label": "findr",
+    "model": "post"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 12,
+  "fields": {
+    "app_label": "findr",
+    "model": "userprofile"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "6jx6pbohnaqaxiie9rh8tinw9vnx4w68",
+  "fields": {
+    "session_data": "MDg2OGU0NmJhZWFjNjJhZWM2NDFmZTM4ODAzMmYyZmVjMzdhYmIwMDp7Il9hdXRoX3VzZXJfaWQiOiIxIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiJjM2IyMmE1MWZiN2RmYWM1MDRiY2ZiYjk5OGZjZjAyMzcyYjUzZWE3In0=",
+    "expire_date": "2017-11-05T08:49:07.688Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "ui6z14uqgvn0tz0xo5w6lstul83nhp59",
+  "fields": {
+    "session_data": "MjNhOTRhMjM4MzBkN2VlZTMwYTc4OTQzYmJmZTBjYzMxZDMzMTk3Yjp7Il9hdXRoX3VzZXJfaWQiOiI1IiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiIzOWRjOGNiN2ZhYzA5M2RhMDk5YzZmNTQxMzI4ODlhZGEzN2JhY2Q0In0=",
+    "expire_date": "2017-11-01T07:32:29.819Z"
+  }
+},
+{
   "model": "findr.cityinfocategory",
   "pk": 1,
   "fields": {
@@ -31,7 +143,1326 @@
   "model": "findr.cityinfocategory",
   "pk": 10,
   "fields": {
-    "name": "Entertainment"
+    "name": "CityInfo"
+  }
+},
+{
+  "model": "findr.cityinfodetail",
+  "pk": 1,
+  "fields": {
+    "category": 1,
+    "name": "Queensland University of Technology",
+    "description": "QUT is a top Australian university providing quality undergraduate and postgraduate courses.",
+    "address": "2 George St, Brisbane City QLD, 4000",
+    "department": "Education",
+    "email": "askqut@qut.edu.au",
+    "website": "https://www.qut.edu.au/",
+    "picture": "thumbnail_images/gardens-point.jpg"
+  }
+},
+{
+  "model": "findr.cityinfodetail",
+  "pk": 2,
+  "fields": {
+    "category": 1,
+    "name": "University of Queensland",
+    "description": "Programs, majors and courses on offer at The University of Queensland.",
+    "address": "St Lucia QLD, 4072",
+    "department": "Education",
+    "email": "help@its.uq.edu.au",
+    "website": "https://www.uq.edu.au",
+    "picture": "thumbnail_images/campus-thumb-stlucia.jpg"
+  }
+},
+{
+  "model": "findr.cityinfodetail",
+  "pk": 3,
+  "fields": {
+    "category": 6,
+    "name": "The Point Brisbane Hotel",
+    "description": "A luxury stay in Kangaroo Point awaits you at The Point Brisbane Hotel.",
+    "address": "21 Lambert Street, Kangaroo Point, QLD",
+    "department": "Accommodation",
+    "email": "N/A",
+    "website": "https://www.wotif.com/Brisbane-Hotels-The-Point-Brisbane-Hotel.h425374.Hotel-Information",
+    "picture": "thumbnail_images/point-brisbane-hotel.jpg"
+  }
+},
+{
+  "model": "findr.cityinfodetail",
+  "pk": 4,
+  "fields": {
+    "category": 6,
+    "name": "Great Southern Hotel Brisbane",
+    "description": "Great Southern Hotel Brisbane puts you in the heart of Brisbane, within just a 10-minute stroll of Treasury Casino.",
+    "address": "103 George Street, Brisbane, QLD",
+    "department": "Accommodation",
+    "email": "N/A",
+    "website": "https://www.wotif.com/Brisbane-Hotels-Great-Southern-Hotel-Brisbane.h82665.Hotel-Information",
+    "picture": "thumbnail_images/great-southern-hotel.jpg"
+  }
+},
+{
+  "model": "findr.cityinfodetail",
+  "pk": 5,
+  "fields": {
+    "category": 6,
+    "name": "Apartments Downtown",
+    "description": "At Apartments Downtown you'll be within a 20-minute stroll of popular places like Queen Street Mall and Roma Street Parkland.",
+    "address": "223 Leichhardt Street, Spring Hill, QLD",
+    "department": "Accommodation",
+    "email": "N/A",
+    "website": "https://www.wotif.com/Brisbane-Hotels-Apartments-Downtown.h16018259.Hotel-Information",
+    "picture": "thumbnail_images/apartments-downtown.jpg"
+  }
+},
+{
+  "model": "findr.cityinfodetail",
+  "pk": 6,
+  "fields": {
+    "category": 6,
+    "name": "Ibis Styles Brisbane Hotel",
+    "description": "Ibis Styles Brisbane Elizabeth Street places you in the center of Brisbane, steps from Brisbane Square Library.",
+    "address": "40 Elizabeth Street, Brisbane, QLD",
+    "department": "Accommodation",
+    "email": "N/A",
+    "website": "https://www.wotif.com/Brisbane-Hotels-Ibis-Styles-Brisbane-Elizabeth-Street.h13340702.Hotel-Information",
+    "picture": "thumbnail_images/ibis-styles-hotel.jpg"
+  }
+},
+{
+  "model": "findr.cityinfodetail",
+  "pk": 7,
+  "fields": {
+    "category": 10,
+    "name": "Botanic Gardens",
+    "description": "The Brisbane Botanic Gardens Mount Coot-tha are recognised as Queensland's premier subtropical botanic gardens.",
+    "address": "Alice St, Brisbane City QLD 4000",
+    "department": "Park",
+    "email": "N/A",
+    "website": "https://www.brisbane.qld.gov.au/facilities-recreation/parks-venues/parks/brisbane-botanic-gardens-mount-coot-tha",
+    "picture": "thumbnail_images/botanic-gardens.jpg"
+  }
+},
+{
+  "model": "findr.cityinfodetail",
+  "pk": 8,
+  "fields": {
+    "category": 10,
+    "name": "Alma Park Zoo",
+    "description": "Alma Park Zoo is set on 40 acres with 12 acres set under a rainforest canopy in Dakabin, Queensland.",
+    "address": "Alma Road, DAKABIN QLD 4503",
+    "department": "Zoo",
+    "email": "N/A",
+    "website": "http://www.almaparkzoo.com.au",
+    "picture": "thumbnail_images/alma-park-zoo.JPG"
+  }
+},
+{
+  "model": "findr.cityinfodetail",
+  "pk": 9,
+  "fields": {
+    "category": 10,
+    "name": "BBQ Tonight",
+    "description": "BBQ Tonight Restaurant is an authentic Pakistani and Indian food restaurant and 100% HALAL.",
+    "address": "2120 Logan Rd, Upper Mount Gravatt QLD 4122",
+    "department": "Restaurant",
+    "email": "info@bbqtonight.com.au",
+    "website": "http://www.bbqtonight.com.au",
+    "picture": "thumbnail_images/bbq-tonight-restaurant.jpg"
+  }
+},
+{
+  "model": "findr.cityinfodetail",
+  "pk": 10,
+  "fields": {
+    "category": 10,
+    "name": "Museum of Brisbane",
+    "description": "Museum of Brisbane brings our city\u2019s vibrant art, culture and history to life through our exhibitions, workshops, tours and etc",
+    "address": "City Hall, 64 Adelaide St, Brisbane City QLD 4000",
+    "department": "Museum",
+    "email": "info@museumofbrisbane.com.au",
+    "website": "http://www.museumofbrisbane.com.au",
+    "picture": "thumbnail_images/museum-of-brisbane.jpeg"
+  }
+},
+{
+  "model": "findr.cityinfodetail",
+  "pk": 11,
+  "fields": {
+    "category": 10,
+    "name": "Westfield Garden City",
+    "description": "Find Westfield Garden City's opening and trading hours for today, this week and special shopping days.",
+    "address": "Logan Rd & Kessels Rd, Upper Mount Gravatt QLD 4122",
+    "department": "Mall",
+    "email": "cgardencity@scentregroup.com",
+    "website": "https://www.westfield.com.au/gardencity",
+    "picture": "thumbnail_images/garden-city.jpg"
+  }
+},
+{
+  "model": "findr.cityinfodetail",
+  "pk": 12,
+  "fields": {
+    "category": 7,
+    "name": "Suncorp",
+    "description": "Suncorp Group Limited is a trusted provider of financial services and solutions.",
+    "address": "Westfield Garden City, 1044 Logan Road, Upper Mount Gravatt QLD 4122",
+    "department": "Business",
+    "email": "CourtProcessDesk@suncorp.com.au",
+    "website": "http://www.suncorp.com.au",
+    "picture": "thumbnail_images/suncorp-logo.png"
+  }
+},
+{
+  "model": "findr.cityinfodetail",
+  "pk": 13,
+  "fields": {
+    "category": 7,
+    "name": "Brisbane Airport Corporation",
+    "description": "The organisation responsible for operating and developing Brisbane Airport.",
+    "address": "11 The Circuit, Brisbane Airport QLD 4008",
+    "department": "Business",
+    "email": "park@bne.com.au",
+    "website": "http://www.bne.com.au/",
+    "picture": "thumbnail_images/Airport_20140901_wide.jpg"
+  }
+},
+{
+  "model": "findr.cityinfodetail",
+  "pk": 14,
+  "fields": {
+    "category": 2,
+    "name": "Brisbane City Council Library",
+    "description": "Council libraries provide a wide range of services including book clubs, reading programs, computer training and events.",
+    "address": "Upper Mount Gravatt QLD 4122",
+    "department": "Education",
+    "email": "N/A",
+    "website": "https://www.brisbane.qld.gov.au/libcatalogue",
+    "picture": "thumbnail_images/Garden-City-Library.jpg"
+  }
+},
+{
+  "model": "findr.cityinfodetail",
+  "pk": 15,
+  "fields": {
+    "category": 2,
+    "name": "Corinda Library",
+    "description": "Corinda Library is located at 641 Oxley Road, and has activities specifically for children, including children\u2019s storytime.",
+    "address": "641 Oxley Rd, Brisbane QLD 4075",
+    "department": "Education",
+    "email": "N/A",
+    "website": "https://www.brisbane.qld.gov.au/facilities-recreation/libraries/opening-hours-locations/corinda-library",
+    "picture": "thumbnail_images/corinda-library.jpg"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 1,
+  "fields": {
+    "name": "Can add log entry",
+    "content_type": 1,
+    "codename": "add_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 2,
+  "fields": {
+    "name": "Can change log entry",
+    "content_type": 1,
+    "codename": "change_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 3,
+  "fields": {
+    "name": "Can delete log entry",
+    "content_type": 1,
+    "codename": "delete_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 4,
+  "fields": {
+    "name": "Can add user",
+    "content_type": 2,
+    "codename": "add_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 5,
+  "fields": {
+    "name": "Can change user",
+    "content_type": 2,
+    "codename": "change_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 6,
+  "fields": {
+    "name": "Can delete user",
+    "content_type": 2,
+    "codename": "delete_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 7,
+  "fields": {
+    "name": "Can add permission",
+    "content_type": 3,
+    "codename": "add_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 8,
+  "fields": {
+    "name": "Can change permission",
+    "content_type": 3,
+    "codename": "change_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 9,
+  "fields": {
+    "name": "Can delete permission",
+    "content_type": 3,
+    "codename": "delete_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 10,
+  "fields": {
+    "name": "Can add group",
+    "content_type": 4,
+    "codename": "add_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 11,
+  "fields": {
+    "name": "Can change group",
+    "content_type": 4,
+    "codename": "change_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 12,
+  "fields": {
+    "name": "Can delete group",
+    "content_type": 4,
+    "codename": "delete_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 13,
+  "fields": {
+    "name": "Can add content type",
+    "content_type": 5,
+    "codename": "add_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 14,
+  "fields": {
+    "name": "Can change content type",
+    "content_type": 5,
+    "codename": "change_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 15,
+  "fields": {
+    "name": "Can delete content type",
+    "content_type": 5,
+    "codename": "delete_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 16,
+  "fields": {
+    "name": "Can add session",
+    "content_type": 6,
+    "codename": "add_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 17,
+  "fields": {
+    "name": "Can change session",
+    "content_type": 6,
+    "codename": "change_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 18,
+  "fields": {
+    "name": "Can delete session",
+    "content_type": 6,
+    "codename": "delete_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 19,
+  "fields": {
+    "name": "Can add city info category",
+    "content_type": 7,
+    "codename": "add_cityinfocategory"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 20,
+  "fields": {
+    "name": "Can change city info category",
+    "content_type": 7,
+    "codename": "change_cityinfocategory"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 21,
+  "fields": {
+    "name": "Can delete city info category",
+    "content_type": 7,
+    "codename": "delete_cityinfocategory"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 22,
+  "fields": {
+    "name": "Can add city info detail",
+    "content_type": 8,
+    "codename": "add_cityinfodetail"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 23,
+  "fields": {
+    "name": "Can change city info detail",
+    "content_type": 8,
+    "codename": "change_cityinfodetail"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 24,
+  "fields": {
+    "name": "Can delete city info detail",
+    "content_type": 8,
+    "codename": "delete_cityinfodetail"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 25,
+  "fields": {
+    "name": "Can add page",
+    "content_type": 9,
+    "codename": "add_page"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 26,
+  "fields": {
+    "name": "Can change page",
+    "content_type": 9,
+    "codename": "change_page"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 27,
+  "fields": {
+    "name": "Can delete page",
+    "content_type": 9,
+    "codename": "delete_page"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 28,
+  "fields": {
+    "name": "Can add category",
+    "content_type": 10,
+    "codename": "add_category"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 29,
+  "fields": {
+    "name": "Can change category",
+    "content_type": 10,
+    "codename": "change_category"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 30,
+  "fields": {
+    "name": "Can delete category",
+    "content_type": 10,
+    "codename": "delete_category"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 31,
+  "fields": {
+    "name": "Can add post",
+    "content_type": 11,
+    "codename": "add_post"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 32,
+  "fields": {
+    "name": "Can change post",
+    "content_type": 11,
+    "codename": "change_post"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 33,
+  "fields": {
+    "name": "Can delete post",
+    "content_type": 11,
+    "codename": "delete_post"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 34,
+  "fields": {
+    "name": "Can add user profile",
+    "content_type": 12,
+    "codename": "add_userprofile"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 35,
+  "fields": {
+    "name": "Can change user profile",
+    "content_type": 12,
+    "codename": "change_userprofile"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 36,
+  "fields": {
+    "name": "Can delete user profile",
+    "content_type": 12,
+    "codename": "delete_userprofile"
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$30000$mjjYQIsYZmvV$EPqU6Jkw7QsZuQf81Q9zvMwZCZfdmZZPlNOoSMlDO5A=",
+    "last_login": "2017-10-22T02:12:57.654Z",
+    "is_superuser": true,
+    "username": "jason",
+    "first_name": "",
+    "last_name": "",
+    "email": "j25.tran@connect.qut.edu.au",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2017-10-04T07:22:47.309Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 2,
+  "fields": {
+    "password": "pbkdf2_sha256$30000$q4X8iw6TZttL$dqT/rcRUQDlKcYQs2wof8Xz0yAYyhTjDlJ7phRzee5I=",
+    "last_login": "2017-10-04T07:43:39.589Z",
+    "is_superuser": false,
+    "username": "joseph",
+    "first_name": "",
+    "last_name": "",
+    "email": "joseph@joseph.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2017-10-04T07:43:11.652Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 3,
+  "fields": {
+    "password": "pbkdf2_sha256$30000$UNsdTyyH3LM7$U2Hsm4z0jaORUa6peTc9ecTtmEUMdUaaYhTQXp7wNvg=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "touristdude",
+    "first_name": "",
+    "last_name": "",
+    "email": "tourist@newtourist.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2017-10-17T14:21:54.375Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 4,
+  "fields": {
+    "password": "pbkdf2_sha256$30000$aIYeVOnX07Vk$pz3sp2FzCwz9EkmE73WDbiun8n3skPqdwhXo9aqEWg8=",
+    "last_login": "2017-10-18T07:32:21.600Z",
+    "is_superuser": false,
+    "username": "businessman",
+    "first_name": "",
+    "last_name": "",
+    "email": "business@live.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2017-10-17T14:25:10.641Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 5,
+  "fields": {
+    "password": "pbkdf2_sha256$30000$Qctzz4a6VoLq$w2rye5gND5wAgb76YFP72Bo+r/99NUPRWRg7EuOc704=",
+    "last_login": "2017-10-18T07:32:29.760Z",
+    "is_superuser": false,
+    "username": "student",
+    "first_name": "",
+    "last_name": "",
+    "email": "student@live.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2017-10-17T14:47:08.983Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 6,
+  "fields": {
+    "password": "pbkdf2_sha256$30000$bQ6HebXAPG3w$iSgMGA+TYHQLqSoj/NvKS/LvFb8TvZ95X1Ch+vTCVrM=",
+    "last_login": "2017-10-18T00:40:34.614Z",
+    "is_superuser": false,
+    "username": "tourist",
+    "first_name": "",
+    "last_name": "",
+    "email": "tourist@tourist.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2017-10-17T14:52:07.016Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 7,
+  "fields": {
+    "password": "pbkdf2_sha256$30000$TsjonmOPzra4$pK0CAh9iw5gTfnMgZG56Ug9nQqoe90ZaTCT9Wr4IL+s=",
+    "last_login": "2017-10-22T02:12:18.489Z",
+    "is_superuser": false,
+    "username": "tourist1",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2017-10-18T00:01:16.505Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "findr.userprofile",
+  "pk": 1,
+  "fields": {
+    "user": 2,
+    "usertype": "2"
+  }
+},
+{
+  "model": "findr.userprofile",
+  "pk": 2,
+  "fields": {
+    "user": 3,
+    "usertype": "2"
+  }
+},
+{
+  "model": "findr.userprofile",
+  "pk": 3,
+  "fields": {
+    "user": 4,
+    "usertype": "3"
+  }
+},
+{
+  "model": "findr.userprofile",
+  "pk": 4,
+  "fields": {
+    "user": 5,
+    "usertype": "1"
+  }
+},
+{
+  "model": "findr.userprofile",
+  "pk": 5,
+  "fields": {
+    "user": 6,
+    "usertype": "2"
+  }
+},
+{
+  "model": "findr.userprofile",
+  "pk": 6,
+  "fields": {
+    "user": 7,
+    "usertype": "2"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 1,
+  "fields": {
+    "action_time": "2017-10-04T07:23:22.273Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "1",
+    "object_repr": "College",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2,
+  "fields": {
+    "action_time": "2017-10-04T07:24:09.184Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "2",
+    "object_repr": "Library",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 3,
+  "fields": {
+    "action_time": "2017-10-04T07:24:16.796Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "3",
+    "object_repr": "Mall",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 4,
+  "fields": {
+    "action_time": "2017-10-04T07:24:21.746Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "4",
+    "object_repr": "Park",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 5,
+  "fields": {
+    "action_time": "2017-10-04T07:24:25.909Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "5",
+    "object_repr": "Zoo",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 6,
+  "fields": {
+    "action_time": "2017-10-04T07:25:40.655Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "1",
+    "object_repr": "Queensland University of Technology",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 7,
+  "fields": {
+    "action_time": "2017-10-04T07:26:26.001Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "2",
+    "object_repr": "University of Queensland",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 8,
+  "fields": {
+    "action_time": "2017-10-04T07:47:40.690Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "6",
+    "object_repr": "industry",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 9,
+  "fields": {
+    "action_time": "2017-10-04T07:48:15.390Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "6",
+    "object_repr": "industry",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 10,
+  "fields": {
+    "action_time": "2017-10-18T00:01:16.660Z",
+    "user": 1,
+    "content_type": 2,
+    "object_id": "7",
+    "object_repr": "tourist1",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 11,
+  "fields": {
+    "action_time": "2017-10-18T00:01:20.888Z",
+    "user": 1,
+    "content_type": 12,
+    "object_id": "6",
+    "object_repr": "UserProfile object",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 12,
+  "fields": {
+    "action_time": "2017-10-22T02:13:16.357Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "6",
+    "object_repr": "Hotel",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 13,
+  "fields": {
+    "action_time": "2017-10-22T02:13:25.534Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "7",
+    "object_repr": "Industry",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 14,
+  "fields": {
+    "action_time": "2017-10-22T02:13:32.785Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "8",
+    "object_repr": "Restaurant",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 15,
+  "fields": {
+    "action_time": "2017-10-22T02:13:55.727Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "9",
+    "object_repr": "Museum",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 16,
+  "fields": {
+    "action_time": "2017-10-22T08:49:23.883Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "9",
+    "object_repr": "Museum",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 17,
+  "fields": {
+    "action_time": "2017-10-22T08:49:23.957Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "8",
+    "object_repr": "Restaurant",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 18,
+  "fields": {
+    "action_time": "2017-10-22T08:49:24.023Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "5",
+    "object_repr": "Zoo",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 19,
+  "fields": {
+    "action_time": "2017-10-22T08:49:24.167Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "4",
+    "object_repr": "Park",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 20,
+  "fields": {
+    "action_time": "2017-10-22T08:49:24.210Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "3",
+    "object_repr": "Mall",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 21,
+  "fields": {
+    "action_time": "2017-10-22T08:49:31.783Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "10",
+    "object_repr": "Entertainment",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 22,
+  "fields": {
+    "action_time": "2017-10-22T08:51:16.649Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "2",
+    "object_repr": "University of Queensland",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"department\", \"email\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 23,
+  "fields": {
+    "action_time": "2017-10-22T08:52:45.003Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "1",
+    "object_repr": "Queensland University of Technology",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"department\", \"email\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 24,
+  "fields": {
+    "action_time": "2017-10-22T08:54:04.902Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "3",
+    "object_repr": "The Point Brisbane Hotel",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 25,
+  "fields": {
+    "action_time": "2017-10-22T08:56:25.225Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "4",
+    "object_repr": "Great Southern Hotel Brisbane",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 26,
+  "fields": {
+    "action_time": "2017-10-22T08:59:19.659Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "5",
+    "object_repr": "Apartments Downtown",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 27,
+  "fields": {
+    "action_time": "2017-10-22T09:03:33.032Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "2",
+    "object_repr": "University of Queensland",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"address\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 28,
+  "fields": {
+    "action_time": "2017-10-22T09:03:33.189Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "1",
+    "object_repr": "Queensland University of Technology",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"address\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 29,
+  "fields": {
+    "action_time": "2017-10-22T09:06:41.284Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "6",
+    "object_repr": "Ibis Styles Brisbane Hotel",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 30,
+  "fields": {
+    "action_time": "2017-10-22T09:07:44.497Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "7",
+    "object_repr": "Botanic Gardens",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 31,
+  "fields": {
+    "action_time": "2017-10-22T09:24:43.056Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "1",
+    "object_repr": "Queensland University of Technology",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"website\", \"picture\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 32,
+  "fields": {
+    "action_time": "2017-10-22T09:30:46.726Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "1",
+    "object_repr": "Queensland University of Technology",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"description\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 33,
+  "fields": {
+    "action_time": "2017-10-22T09:32:25.661Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "2",
+    "object_repr": "University of Queensland",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"description\", \"website\", \"picture\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 34,
+  "fields": {
+    "action_time": "2017-10-22T10:00:15.924Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "3",
+    "object_repr": "The Point Brisbane Hotel",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"description\", \"website\", \"picture\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 35,
+  "fields": {
+    "action_time": "2017-10-22T12:52:33.216Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "4",
+    "object_repr": "Great Southern Hotel Brisbane",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"description\", \"website\", \"picture\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 36,
+  "fields": {
+    "action_time": "2017-10-22T12:53:34.206Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "5",
+    "object_repr": "Apartments Downtown",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"description\", \"website\", \"picture\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 37,
+  "fields": {
+    "action_time": "2017-10-22T12:54:31.661Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "6",
+    "object_repr": "Ibis Styles Brisbane Hotel",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"description\", \"website\", \"picture\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 38,
+  "fields": {
+    "action_time": "2017-10-22T12:56:37.464Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "7",
+    "object_repr": "Botanic Gardens",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"description\", \"website\", \"picture\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 39,
+  "fields": {
+    "action_time": "2017-10-22T13:00:03.803Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "8",
+    "object_repr": "Alma Park Zoo",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 40,
+  "fields": {
+    "action_time": "2017-10-22T13:04:16.519Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "9",
+    "object_repr": "BBQ Tonight",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 41,
+  "fields": {
+    "action_time": "2017-10-22T13:06:57.283Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "10",
+    "object_repr": "Museum of Brisbane",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 42,
+  "fields": {
+    "action_time": "2017-10-22T13:09:16.485Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "11",
+    "object_repr": "Westfield Garden City",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 43,
+  "fields": {
+    "action_time": "2017-10-22T13:14:44.020Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "12",
+    "object_repr": "Suncorp",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 44,
+  "fields": {
+    "action_time": "2017-10-22T13:19:37.054Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "13",
+    "object_repr": "Brisbane Airport Corporation",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 45,
+  "fields": {
+    "action_time": "2017-10-22T13:23:14.723Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "14",
+    "object_repr": "Brisbane City Council Library",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 46,
+  "fields": {
+    "action_time": "2017-10-22T13:25:41.722Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "15",
+    "object_repr": "Corinda Library",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 47,
+  "fields": {
+    "action_time": "2017-10-23T05:44:18.898Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "10",
+    "object_repr": "CityInfo",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"name\"]}}]"
   }
 }
 ]
