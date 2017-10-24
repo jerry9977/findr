@@ -17,11 +17,24 @@
 	color: white;
 	text-align: left;
 	vertical-align: middle;
-
+	text-decoration: none;
 	font-family: "Roboto", "Helvetica", "Arial", sans-serif;	
 	
 }
+.a-all{
+	text-decoration: none;
+	color: white;
+}
 
+.a-all:focus, .a-all:hover{
+	color:white;
+	text-decoration: underline;
+}
+
+.footer-logo:hover, .footer-logo:focus{
+	color:white;
+	text-decoration: none;
+}
 
 .general-site-map h1,
 .general-site-map li,

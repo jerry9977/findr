@@ -3,40 +3,34 @@ from django.shortcuts import render
 # Create your views here.
 from django.http import HttpResponseRedirect, HttpResponse
 from .forms import UserForm, UserProfileForm
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 from .models import *
 from django.core.paginator import *
 from django.contrib.auth.models import User
 from django.contrib.auth.hashers import check_password
 from django.core.exceptions import ObjectDoesNotExist, MultipleObjectsReturned
+from django.contrib.auth.decorators import login_required
 
+@login_required(login_url='/findr/login')
 def index(request):
-    # if request.method == 'GET':
+    usertype = request.session.get('usertype', None)
+    return render(request, 'findr/index.html', {'usertype':usertype})
+    
+   
 
-    #     return render(request, 'findr/searchtest.html')
-    #     pass
-    return render(request, 'findr/student.html')
 
-def tourist(request):
-    # if request.method == 'GET':
+def user_logout(request):
+    logout(request)
+    return HttpResponseRedirect('/findr/login')
 
-    #     return render(request, 'findr/searchtest.html')
-    #     pass
-    return render(request, 'findr/tourist.html')
 
-def businessman(request):
-    # if request.method == 'GET':
-
-    #     return render(request, 'findr/searchtest.html')
-    #     pass
-    return render(request, 'findr/businessman.html')
 
 def admin(request):
     # if request.method == 'GET':
 
     #     return render(request, 'findr/searchtest.html')
     #     pass
-    return render(request, 'findr/admin.html')
+    return render(request, 'findr/index.html', {'usertype':"admin"})
 
 # def index(request):
 #     retdict = {'articles': Article.objects.all(),}
@@ -159,25 +153,37 @@ def user_login(request):
                 # If user is an admin, redirects admin to admin home page
                 if userAuth.is_superuser:
                     login(request, userAuth)
-                    return HttpResponseRedirect('/findr/admin')
+                    request.session['usertype'] = "admin"
+                    request.session.modified = True
+                    print(request.session.get('usertype'))
+                    return HttpResponseRedirect('/findr/index')
 
                 # Check whether user is a student by using "if is not None"
                 # If user is a student, redirects user to student home page 
                 if student is not None:
                     login(request, userAuth)
-                    return HttpResponseRedirect('/findr/student')
+                    request.session['usertype'] = "student"
+                    request.session.modified = True
+                    print(request.session.get('usertype'))
+                    return HttpResponseRedirect('/findr/index')
 
                 # Check whether user is a tourist by using "if is not None"
                 # If user is a tourist, redirects user to tourist home page 
                 elif tourist is not None:
                     login(request, userAuth)
-                    return HttpResponseRedirect('/findr/tourist')
+                    request.session['usertype'] = "tourist"
+                    request.session.modified = True
+                    print(request.session.get('usertype'))
+                    return HttpResponseRedirect('/findr/index')
 
                 # Check whether user is a businessman by using "if is not None"
                 # If user is a businessman, redirects user to businessman home page 
                 elif businessman is not None:
                     login(request, userAuth)
-                    return HttpResponseRedirect('/findr/businessman')
+                    request.session['usertype'] = "businessman"
+                    request.session.modified = True
+                    print(request.session.get('usertype'))
+                    return HttpResponseRedirect('/findr/index')
                 
                 # If there user exists and is not a student, tourist or businessman
                 # Output the message saying account has been disabled
@@ -197,13 +203,16 @@ def user_login(request):
 
     # The request is not a HTTP POST, so display the login form.
     # This scenario would most likely be a HTTP GET.
-    else:
+    elif request.session.get('usertype', None) is not None:
         # No context variables to pass to the template system, hence the
         # blank dictionary object...
-        return render(request, 'findr/login.htm', {})
+        return HttpResponseRedirect('/findr/index')
+    else:
+
+        return render(request, "findr/login.html")
 
 
-
+@login_required(login_url='/findr/login')
 def searchtest(request):
 
     if request.method == "POST":
@@ -219,7 +228,7 @@ def searchtest(request):
 
 
 
-
+@login_required(login_url='/findr/login')
 def category(request, category):
     result_list = CityInfoDetail.objects.filter(category__name__iexact=category)
     paginator = Paginator(result_list, 4)
@@ -235,6 +244,44 @@ def category(request, category):
 
     return render(request, "findr/resultspage.html", {'results':results, 'category':category})
 
-
+@login_required(login_url='/findr/login')
 def itempage(request):
     return render(request, 'findr/itempage.html')
+
+def search(request):
+    if request.method == "POST":
+        search_target = request.POST['search']
+        request.session['search_target'] = search_target
+        request.modified = True
+        
+        result_list = CityInfoDetail.objects.filter(name__icontains=search_target)
+        paginator = Paginator(result_list, 4)
+        
+        page = request.GET.get('page')
+
+        try:
+            results = paginator.page(page)
+        except PageNotAnInteger:
+
+            results = paginator.page(1)
+        except EmptyPage:
+            results = paginator.page(paginator.num_pages)
+
+        return render(request, "findr/resultspage.html", {'results':results})
+
+    elif request.session.get('search_target', None) is not None:
+        search_target = request.session.get('search_target', None)
+        result_list = CityInfoDetail.objects.filter(name__icontains=search_target)
+        paginator = Paginator(result_list, 4)
+        page = request.GET.get('page')
+        try:
+            results = paginator.page(page)
+        except PageNotAnInteger:
+
+            results = paginator.page(1)
+        except EmptyPage:
+            results = paginator.page(paginator.num_pages)
+
+        return render(request, "findr/resultspage.html", {'results':results})
+    else:
+        return render(request, "findr/index.html", {})

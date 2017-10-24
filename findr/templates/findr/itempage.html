@@ -12,39 +12,47 @@
 
 		<div class='menu-bar'>
 			<div class='logo-wrapper'>
-				<h1 href='#'class='logo'>
+				<a href='../index'class='logo'>
 				Findr
-				</h1>
+				</a>
 			</div>
 			
-			<div class='search-container'>     
-				<input  class='searchbar'  placeholder="Search..."/> 
-				<i class="search-icon material-icons">search</i>
-            </div>
+			<div class='search-container'>
+	    		<form name='search-form' method="POST" action="/findr/search/">
+	    			{% csrf_token %}
+					<input  class='searchbar' type="text" name="search" placeholder="Search..."/>
+					<button class='search-button'type="submit" value="submit">
+						<i class="search-icon material-icons">search</i>
+					</button>
+
+					
+					<div class="searchbar-border-bottom"></div>
+				</form>
+	        </div>
             
 
 			
-			<a href="/findr/login/" class='logout-button'>Sign Out</a>
+			<a href="/findr/logout/" class='logout-button'>Sign Out</a>
 
 		</div>
 
-
-		<iframe class= 'locationGoogleMap'src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3522.684221298304!2d153.42286291569837!3d-28.00355604632275!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b91057aba149ea7%3A0x6162df26e42d8621!2sK+Resort!5e0!3m2!1sen!2sau!4v1468319023374" frameborder="0" allowfullscreen></iframe>
-		
+		<div class='first-content-container'>
+			<iframe class= 'locationGoogleMap'src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3522.684221298304!2d153.42286291569837!3d-28.00355604632275!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b91057aba149ea7%3A0x6162df26e42d8621!2sK+Resort!5e0!3m2!1sen!2sau!4v1468319023374" frameborder="0" allowfullscreen></iframe>
+		</div>
 		<div class='footer'>	
 			<div='footer-row'>
-				<h1 class='footer-logo'>
+				<a href='../index' class='footer-logo'>
 					FINDR
-				</h1>
+				</a>
 
 				<ul class='general-site-map'>
 					<h1 class='footer-title'>
 						SITE MAP
 					</h1>
-					<li>HOME</li>
-					<li>COLLGES</li>
-					<li>LIBRARY</li>
-					<li>CITY INFO</li>
+					<li><a class='a-all' href='../index'>HOME</li>
+					<li><a class='a-all' href="../college">COLLGES</a></li>
+					<li><a class='a-all' href="../library">LIBRARY<a></li>
+					<li><a class='a-all' href="../cityinfo">CITY INFO</a></li>
 					
 				</ul>
 
@@ -52,13 +60,14 @@
 					<h1 class='footer-title'>
 						NEED HELP?
 					</h1>
-					<li>MAP</li>
-					<li>TRANSPORT</li>
-					<li>EVENTS</li>
+					<li><a class='a-all' href="../itempage/">MAP</a></li>
+					<li><a class='a-all' href="https://translink.com.au/">TRANSPORT</a></li>
+					<li><a class='a-all' href="/findr/event">EVENTS</a></li>
 				</ul>
 
 			</div>
 		</div>
+
 
 
 

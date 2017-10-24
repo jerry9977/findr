@@ -1,0 +1,31 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'findr/css/login.css' %}">
+<html>
+    <head>
+        <!-- Is anyone getting tired of repeatedly entering the header over and over?? -->
+        <title>Findr - Login</title>
+    </head>
+    <div class ='root'>
+        <div class='app-frame'>
+            <div class='page-background'>
+                </div>
+                <div class='form-div'>
+                    <body>
+                        <h1>Login to Findr</h1>
+
+                        <form id="login_form" method="post" action="/findr/login/">
+                            {% csrf_token %}
+                            <br /><input class="inputbox" type="text" name="username" value="" size="25" placeholder="username"/>
+                            <br />
+                            <br /><input class="inputbox" type="password" name="password" value="" size="25" placeholder="password" />
+                            <br />
+
+                            <input id="login-button" type="submit" value="LOGIN" />
+                        </form>
+
+                        <p>Not registered? <a href="../register">Create an account</a></p>
+                    </body>
+                </div>
+        </div>
+    </div>
+</html>

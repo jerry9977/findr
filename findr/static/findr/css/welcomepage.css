@@ -69,6 +69,7 @@
 .first-content-header{
 	font-weight: bold;
 	font-size: 40px;
+	text-transform: uppercase;
 	top: 60px;
 	color: #464646;
 }
@@ -237,14 +238,6 @@
 	right:40px;
 }
 
-.a-all {
-	text-decoration:none;
-	color:white;
-}
-
-.a-all:hover {
-	color:white;
-}
 
 
 

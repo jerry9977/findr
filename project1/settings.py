@@ -12,6 +12,9 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 
 import os
 
+
+
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -86,7 +89,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'findr',
         'USER': 'root',
-        'PASSWORD': 'secret',
+        'PASSWORD': 'yrrej9977',
         'HOST': '127.0.0.1',
         'PORT': '3306',
         
@@ -133,6 +136,8 @@ PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
 STATIC_URL = '/static/'
 
-MEDIA_DIR = os.path.join(PROJECT_ROOT, 'media')
-MEDIA_ROOT = MEDIA_DIR
+MEDIA_DIR = os.path.join(PROJECT_ROOT, 'media')
+
+MEDIA_ROOT = MEDIA_DIR
+
 MEDIA_URL = '/media/'

@@ -1,5 +1,22 @@
+
+.search-container{
+	left: -40;
+}
+.search-icon{
+	color: white;
+}
+
+.first-content-container{
+	height: 1000px;
+	width: auto;
+}
+
+
 .locationGoogleMap {
+	position: relative;
+	display: table;
+	top: 200px;
     width: 600px;
     height: 500px;
-    margin-left: 300px;
+    margin:0 auto;
 }

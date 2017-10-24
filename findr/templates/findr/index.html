@@ -31,14 +31,22 @@
 				</h1>
 			</div>
 			
-			<div class='search-container'>     
-				<input  class='searchbar'  placeholder="Search..."/> 
-				<i class="search-icon material-icons">search</i>
-            </div>
+			<div class='search-container'>
+	    		<form name='search-form' method="POST" action="/findr/search/">
+	    			{% csrf_token %}
+					<input  class='searchbar' type="text" name="search" placeholder="Search..."/>
+					<button class='search-button'type="submit" value="submit">
+						<i class="search-icon material-icons">search</i>
+					</button>
+
+					
+					<div class="searchbar-border-bottom"></div>
+				</form>
+	        </div>
             
 
 			
-			<a href="/findr/login/" class='logout-button'>Sign Out</a>
+			<a href="/findr/logout/" class='logout-button'>Sign Out</a>
 
 		</div>
 
@@ -92,7 +100,9 @@
 
 		<div class='first-content-container'>
 			<h1 class='first-content-header'>
-				STUDENT
+				{{ usertype }}
+
+	
 			</h1>
 			<p class='first-content-paragraph'>
 				Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod 
@@ -100,6 +110,7 @@
 			</p>
 			<div class='content-categories'>
 
+				{% if usertype == "student" %}
 				<a class='content-category' href="../college/">
 
 					<i class='category-icon material-icons'>school</i>
@@ -122,11 +133,10 @@
 	                    </p>
 	                    <i class="read-more-arrow-icon material-icons">keyboard_arrow_right</i>
            
-	                </div>
-	                           
+	                </div>         
 	        	</a>
 
-	        	<a class='content-category'>
+	        	<a class='content-category' href="../library/">
 
 					<i class='category-icon material-icons'>local_library</i>
 
@@ -149,10 +159,115 @@
 	                    <i class="read-more-arrow-icon material-icons">keyboard_arrow_right</i>
            
 	                </div>
+	        	</a>
+
+	        	<a class='content-category' href="../cityinfo/">
+
+					<i class='category-icon material-icons'>location_city</i>
+
+	                <div class='description-box'>
+	                    <div class='description-title' type="title" component="h1">
+	                        CITY INFO
+	                    </div>
+
+	                    <div class='description-paragraph' type="subheading" component="p">
+	                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent egestas, dui a semper porttitor, felis mi sodales nunc.
+	                    </div>
+
+	                </div>
+
+	                <div class='read-more-link' >
+						<p class='read-more-string'>
+	                        READ MORE
+	                        
+	                    </p>
+	                    <i class="read-more-arrow-icon material-icons">keyboard_arrow_right</i>
+           
+	                </div>              
+	        	</a>
+
+	        	<a class='content-category' href="https://translink.com.au/">
+
+					<i class='category-icon material-icons'>directions_bus</i>
+
+	                <div class='description-box'>
+	                    <div class='description-title' type="title" component="h1">
+	                        TRANSPORT
+	                    </div>
+
+	                    <div class='description-paragraph' type="subheading" component="p">
+	                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent egestas, dui a semper porttitor, felis mi sodales nunc.
+	                    </div>
+
+	                </div>
+
+	                <div class='read-more-link' >
+						<p class='read-more-string'>
+	                        READ MORE
+	                        
+	                    </p>
+	                    <i class="read-more-arrow-icon material-icons">keyboard_arrow_right</i>
+           
+	                </div> 
+	        	</a>
+
+	        	{% endif %}
+
+	        	{% if usertype == "tourist" %}
+				<a class='content-category' href="/findr/hotel">
+
+					<i class='category-icon material-icons'>hotel</i>
+
+	                <div class='description-box'>
+	                    <div class='description-title' type="title" component="h1">
+	                        HOTEL
+	                    </div>
+
+	                    <div class='description-paragraph' type="subheading" component="p">
+	                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent egestas, dui a semper porttitor, felis mi sodales nunc.
+	                    </div>
+
+	                </div>
+
+	                <div class='read-more-link' >
+						<p class='read-more-string'>
+	                        READ MORE
+	                        
+	                    </p>
+	                    <i class="read-more-arrow-icon material-icons">keyboard_arrow_right</i>
+           
+	                </div>
 
 	                           
 	        	</a>
-	        	<a class='content-category'>
+
+	        	<a class='content-category' href="/findr/entertainment">
+
+					<i class='category-icon material-icons'>looks</i>
+
+	                <div class='description-box'>
+	                    <div class='description-title' type="title" component="h1">
+	                        ENTERTAINMENT
+	                    </div>
+
+	                    <div class='description-paragraph' type="subheading" component="p">
+	                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent egestas, dui a semper porttitor, felis mi sodales nunc.
+	                    </div>
+
+	                </div>
+
+	                <div class='read-more-link' >
+						<p class='read-more-string'>
+	                        READ MORE
+	                        
+	                    </p>
+	                    <i class="read-more-arrow-icon material-icons">keyboard_arrow_right</i>
+           
+	                </div>
+
+	                           
+	        	</a>
+	        	<a class='content-category' href="/findr/cityinfo">
 
 					<i class='category-icon material-icons'>location_city</i>
 
@@ -178,7 +293,7 @@
 
 	                           
 	        	</a>
-	        	<a class='content-category'>
+	        	<a class='content-category' href="https://translink.com.au/">
 
 					<i class='category-icon material-icons'>directions_bus</i>
 
@@ -204,6 +319,225 @@
 
 	                           
 	        	</a>
+
+	        	{% endif %}
+
+	        	{% if usertype == "businessman" %}
+	        	<a class='content-category' href="/findr/hotel">
+
+					<i class='category-icon material-icons'>hotel</i>
+
+	                <div class='description-box'>
+	                    <div class='description-title' type="title" component="h1">
+	                        HOTEL
+	                    </div>
+
+	                    <div class='description-paragraph' type="subheading" component="p">
+	                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent egestas, dui a semper porttitor, felis mi sodales nunc.
+	                    </div>
+
+	                </div>
+
+	                <div class='read-more-link' >
+						<p class='read-more-string'>
+	                        READ MORE
+	                        
+	                    </p>
+	                    <i class="read-more-arrow-icon material-icons">keyboard_arrow_right</i>
+           
+	                </div>
+
+	                           
+	        	</a>
+
+	        	<a class='content-category' href="/findr/industry">
+
+					<i class='category-icon material-icons'>business</i>
+
+	                <div class='description-box'>
+	                    <div class='description-title' type="title" component="h1">
+	                        INDUSTRY
+	                    </div>
+
+	                    <div class='description-paragraph' type="subheading" component="p">
+	                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent egestas, dui a semper porttitor, felis mi sodales nunc.
+	                    </div>
+
+	                </div>
+
+	                <div class='read-more-link' >
+						<p class='read-more-string'>
+	                        READ MORE
+	                        
+	                    </p>
+	                    <i class="read-more-arrow-icon material-icons">keyboard_arrow_right</i>
+           
+	                </div>
+
+	                           
+	        	</a>
+	        	<a class='content-category' href="/findr/cityinfo">
+
+					<i class='category-icon material-icons'>location_city</i>
+
+	                <div class='description-box'>
+	                    <div class='description-title' type="title" component="h1">
+	                        CITY INFO
+	                    </div>
+
+	                    <div class='description-paragraph' type="subheading" component="p">
+	                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent egestas, dui a semper porttitor, felis mi sodales nunc.
+	                    </div>
+
+	                </div>
+
+	                <div class='read-more-link' >
+						<p class='read-more-string'>
+	                        READ MORE
+	                        
+	                    </p>
+	                    <i class="read-more-arrow-icon material-icons">keyboard_arrow_right</i>
+           
+	                </div>
+
+	                           
+	        	</a>
+	        	<a class='content-category' href="https://translink.com.au/">
+
+					<i class='category-icon material-icons'>directions_bus</i>
+
+	                <div class='description-box'>
+	                    <div class='description-title' type="title" component="h1">
+	                        TRANSPORT
+	                    </div>
+
+	                    <div class='description-paragraph' type="subheading" component="p">
+	                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent egestas, dui a semper porttitor, felis mi sodales nunc.
+	                    </div>
+
+	                </div>
+
+	                <div class='read-more-link' >
+						<p class='read-more-string'>
+	                        READ MORE
+	                        
+	                    </p>
+	                    <i class="read-more-arrow-icon material-icons">keyboard_arrow_right</i>
+           
+	                </div>
+
+	                           
+	        	</a>
+	        	{% endif %}
+
+	        	{% if usertype == "admin" %}
+	        	<a class='content-category' href="/findr/college">
+
+					<i class='category-icon material-icons'>school</i>
+
+	                <div class='description-box'>
+	                    <div class='description-title' type="title" component="h1">
+	                        SCHOOL
+	                    </div>
+
+	                    <div class='description-paragraph' type="subheading" component="p">
+	                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent egestas, dui a semper porttitor, felis mi sodales nunc.
+	                    </div>
+
+	                </div>
+
+	                <div class='read-more-link' >
+						<p class='read-more-string'>
+	                        READ MORE
+	                        
+	                    </p>
+	                    <i class="read-more-arrow-icon material-icons">keyboard_arrow_right</i>
+           
+	                </div>
+
+	                           
+	        	</a>
+
+	        	<a class='content-category' href="/findr/hotel">
+
+					<i class='category-icon material-icons'>hotel</i>
+
+	                <div class='description-box'>
+	                    <div class='description-title' type="title" component="h1">
+	                        HOTEL
+	                    </div>
+
+	                    <div class='description-paragraph' type="subheading" component="p">
+	                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent egestas, dui a semper porttitor, felis mi sodales nunc.
+	                    </div>
+
+	                </div>
+
+	                <div class='read-more-link' >
+						<p class='read-more-string'>
+	                        READ MORE
+	                        
+	                    </p>
+	                    <i class="read-more-arrow-icon material-icons">keyboard_arrow_right</i>
+           
+	                </div>
+
+	                           
+	        	</a>
+	        	<a class='content-category' href="/findr/entertainment">
+
+					<i class='category-icon material-icons'>looks</i>
+
+	                <div class='description-box'>
+	                    <div class='description-title' type="title" component="h1">
+	                        ENTERTAINMENT
+	                    </div>
+
+	                    <div class='description-paragraph' type="subheading" component="p">
+	                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent egestas, dui a semper porttitor, felis mi sodales nunc.
+	                    </div>
+
+	                </div>
+
+	                <div class='read-more-link' >
+						<p class='read-more-string'>
+	                        READ MORE
+	                        
+	                    </p>
+	                    <i class="read-more-arrow-icon material-icons">keyboard_arrow_right</i>
+           
+	                </div>
+
+	                           
+	        	</a>
+	        	<a class='content-category' href="/findr/cityinfo">
+
+					<i class='category-icon material-icons'>location_city</i>
+
+	                <div class='description-box'>
+	                    <div class='description-title' type="title" component="h1">
+	                        CITY INFO
+	                    </div>
+
+	                    <div class='description-paragraph' type="subheading" component="p">
+	                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent egestas, dui a semper porttitor, felis mi sodales nunc.
+	                    </div>
+
+	                </div>
+
+	                <div class='read-more-link' >
+						<p class='read-more-string'>
+	                        READ MORE
+	                        
+	                    </p>
+	                    <i class="read-more-arrow-icon material-icons">keyboard_arrow_right</i>
+           
+	                </div>
+
+	                           
+	        	</a>
+	        	{% endif %}
+
 	        	
 			</div>
 			
@@ -212,18 +546,18 @@
 
 		<div class='footer'>	
 			<div='footer-row'>
-				<h1 class='footer-logo'>
+				<a href='../index' class='footer-logo'>
 					FINDR
-				</h1>
+				</a>
 
 				<ul class='general-site-map'>
 					<h1 class='footer-title'>
 						SITE MAP
 					</h1>
-					<li>HOME</li>
-					<li>COLLGES</li>
-					<li>LIBRARY</li>
-					<li>CITY INFO</li>
+					<li><a class='a-all' href='../index'>HOME</li>
+					<li><a class='a-all' href="../college">COLLGES</a></li>
+					<li><a class='a-all' href="../library">LIBRARY<a></li>
+					<li><a class='a-all' href="../cityinfo">CITY INFO</a></li>
 					
 				</ul>
 
@@ -231,13 +565,14 @@
 					<h1 class='footer-title'>
 						NEED HELP?
 					</h1>
-					<li>MAP</li>
-					<li>TRANSPORT</li>
-					<li>EVENTS</li>
+					<li><a class='a-all' href="../itempage/">MAP</a></li>
+					<li><a class='a-all' href="https://translink.com.au/">TRANSPORT</a></li>
+					<li><a class='a-all' href="/findr/event">EVENTS</a></li>
 				</ul>
 
 			</div>
 		</div>
+
     	
 
 

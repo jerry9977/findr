@@ -17,6 +17,15 @@
 
 .search-icon{
 	left:85px;
+	top: 0px;
+}
+
+.search-button{
+	width: 0;
+	height: 0;
+	padding: 0;
+	visibility: 0;
+	border:0;
 }
 
 
@@ -44,8 +53,8 @@
 }
 
 
-.searchbar:active ~ .search-icon,
-.searchbar:focus ~ .search-icon,
+.searchbar:active ~ .search-button > .search-icon,
+.searchbar:focus ~ .search-button > .search-icon,
 .search-container:hover .search-icon{
 	left:178px;
 }
@@ -62,6 +71,7 @@
 
 .result-content{
 	position: relative;
+	min-width: 750px;
 	padding-bottom:50px;
 	width: 100%;
 	height: 200px;
@@ -80,7 +90,9 @@ img{
 .result-info{
 	position: relative;
 	float: left;
-	margin-left: 20px;
+	width: 500px;
+	height: 200px;
+	margin: 20px;
 }
 
 
