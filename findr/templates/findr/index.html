@@ -16,6 +16,15 @@
 <script src="{% static 'findr/javascript/jquery.min.js' %}"></script>
 <script src="{% static 'findr/javascript/bootstrap.min.js' %}"></script>
 
+<script>
+	
+
+	function detectvalue(){
+		var e = document.getElementById("SearchTimeSelect");
+		var strUser = e.options[e.selectedIndex].value;
+
+	}
+</script>
 
 
 
@@ -96,7 +105,180 @@
 			</div>
 		</div>
 
+		
+		<form action="https://jp.translink.com.au/plan-your-journey/journey-planner/start" id="journey-planner-form" method="post" novalidate="novalidate">
 
+			<input type="hidden" id="StartLocationId" name="StartLocationId">
+			<input type="hidden" id="EndLocationId" name="EndLocationId">
+
+			<div>
+				<div id="location-fields" class="row">
+					<div class="col-xs-12">
+						<fieldset>
+							<div class="form-group form-inline">
+								<div class="input-group loading-indicator with-detect-location outer-border-right">
+									<input aria-label="Enter start address, landmark, stop name or stop id. Select 'use my current location' below. Or start typing a location, and select a suggestion from the list below" aria-required="true" class="form-control" data-location-id="" id="Start" name="Start" placeholder="Enter a start location" type="text" value="" autocomplete="off" aria-invalid="false">
+									
+								</div><label id="Start-error" class="" for="Start" style="display: none;"></label>
+							</div>
+							<div class="form-group form-inline">
+								<div class="input-group with-detect-location outer-border-right loading-indicator">
+									<input aria-label="Enter destination address, landmark, stop name or stop id. Select 'use my current location' below. Or start typing a location, and select a suggestion from the list below" aria-required="true" class="form-control" data-location-id="" id="End" name="End" placeholder="Enter an end location" type="text" value="" autocomplete="off" aria-invalid="false">
+									
+								</div>
+							</div>
+
+						</fieldset>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-12">
+						<fieldset>
+							<legend class="sr-only">Travel day and time</legend>
+							<div class="form-group">
+								<label class="sr-only" for="SearchDate">Date</label>
+
+								<select class="form-control" id="SearchDate" name="SearchDate">
+									<option value="" disabled selected hidden>Select a date..</option>
+									{% for date in dates %}
+										<option value="{{date.day}}/{{date.month}}/{{date.year}}">{{date|date:"l M d"}}</option>
+									{% endfor %}
+								</select>
+							</div>
+						</fieldset>
+					</div>
+				</div>
+				<div class="row">
+					<div id="before-after-btns" >
+						<div class="form-group">
+							<div class="input-group">
+								<select id="TimeSearchMode" name="TimeSearchMode" type="hidden">
+									<option value="LeaveAfter">Leave After</option>	
+									<option value="ArriveBefore">Arrive Before</option>
+								</select>
+							</div>
+						</div>
+					</div>
+					<div id="time-selection" >
+						<div class="form-group">
+							<label class="sr-only" for="SearchTime">Time</label>
+
+							<select id="SearchHour" name="SearchHour" type="hidden">
+									{% for i in time_loop %}
+										<option value="{{ i|add:'1' }}">{{ i|add:"1" }}</option>											
+									{% endfor %}
+							</select>
+							<select id="SearchMinute" name="SearchMinute" type="hidden">
+									{% for i in time_loop %}
+										<option value="{% widthratio 5 1 i %}">{% widthratio 5 1 i %}</option>											
+									{% endfor %}
+							</select>
+
+							<select id="TimeMeridiem" name="TimeMeridiem" type="hidden">
+								<option value="AM">AM</option>	
+								<option value="PM">PM</option>		
+							</select>
+							
+							
+						</div>
+					</div>
+					<button id="submit-btn"type="submit" class="btn btn-primary">
+						Find a journey
+					</button>
+				</div>
+
+
+				<div class="text-right dropdown" id="advanced-options-wrapper"  style="display: none;">
+					<button class="btn btn-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" type="button">
+						Advanced options
+						<span class="sr-only">Click to open the advanced options popup which appears after this button</span>
+					</button>
+
+					<div class="dropdown-menu well with-arrow with-arrow-center" id="advanced-options">
+
+						<fieldset class="form-group">
+							<legend>Mode of transport</legend>
+							<label class="checkbox-inline">
+								<input checked="checked" id="TransportModeBus" name="TransportModes" tabindex="0" type="checkbox" value="Bus"> Bus
+							</label>
+							<label class="checkbox-inline">
+								<input checked="checked" id="TransportModeTrain" name="TransportModes" tabindex="0" type="checkbox" value="Train"> Train
+							</label>
+							<label class="checkbox-inline">
+								<input checked="checked" id="TransportModeFerry" name="TransportModes" tabindex="0" type="checkbox" value="Ferry"> Ferry
+							</label>
+							<label class="checkbox-inline">
+								<input checked="checked" id="TransportModeTram" name="TransportModes" tabindex="0" type="checkbox" value="Tram"> Tram
+							</label>
+						</fieldset>
+
+						<div class="row">
+							<div class="col-sm-8">
+								<fieldset>
+									<legend>Walking options</legend>
+									<div class="form-group">
+										<label for="MaximumWalkingDistance">Maximum walk</label>
+										<select class="form-control" id="MaximumWalkingDistance" name="MaximumWalkingDistance">
+											<option value="100">Up to 100m</option>
+											<option value="250">Up to 250m</option>
+											<option value="500">Up to 500m</option>
+											<option value="1000">Up to 1km</option>
+											<option value="1500">Up to 1.5km</option>
+											<option value="2000">Up to 2km</option>
+											<option selected="selected" value="4000">Up to 4km</option>
+										</select>
+									</div>
+									<div class="form-group">
+										<label for="WalkingSpeed">Walking speed</label>
+										<select class="form-control" id="WalkingSpeed" name="WalkingSpeed">
+											<option value="Slow">Slow</option>
+											<option selected="selected" value="Normal">Normal</option>
+											<option value="Fast">Fast</option>
+										</select>
+									</div>
+								</fieldset>
+							</div>
+						</div>
+
+						<fieldset class="form-group collapse in" id="ServiceTypes">
+							<legend>Bus service types</legend>
+							<label class="checkbox-inline">
+								<input checked="checked" id="ServiceModeRegular" name="ServiceTypes" tabindex="0" type="checkbox" value="Regular"> Regular
+							</label>
+							<label class="checkbox-inline">
+								<input checked="checked" id="ServiceModeExpress" name="ServiceTypes" tabindex="0" type="checkbox" value="Express"> Express
+							</label>
+							<label class="checkbox-inline">
+								<input checked="checked" id="ServiceModeNightLink" name="ServiceTypes" tabindex="0" type="checkbox" value="NightLink"> NightLink
+							</label>
+							<label class="checkbox-inline">
+								<input checked="checked" id="ServiceModeSchool" name="ServiceTypes" tabindex="0" type="checkbox" value="School"> School
+							</label>
+						</fieldset>
+
+						<fieldset class="form-group">
+							<legend>Fare types</legend>
+							<label class="checkbox-inline">
+								<input checked="checked" id="FareTypeStandard" name="FareTypes" tabindex="0" type="checkbox" value="Standard"> Standard
+							</label>
+							<label class="checkbox-inline">
+								<input checked="checked" id="FareTypePrepaid" name="FareTypes" tabindex="0" type="checkbox" value="Prepaid"> Prepaid
+							</label>
+							<label class="checkbox-inline">
+								<input checked="checked" id="FareTypeFree" name="FareTypes" tabindex="0" type="checkbox" value="Free"> Free
+							</label>
+						</fieldset>
+
+						<div class="text-right">
+							<input type="submit" value="Find journey" class="btn btn-primary">
+						</div>
+					</div>
+
+				</div>
+
+				
+			</div>
+		</form>
 
 		<div class='first-content-container'>
 			<h1 class='first-content-header'>
@@ -580,3 +762,4 @@
         
 	</div>
 </div>
+

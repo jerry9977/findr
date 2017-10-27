@@ -1,5 +1,5 @@
 from django.shortcuts import render
-
+import datetime
 # Create your views here.
 from django.http import HttpResponseRedirect, HttpResponse
 from .forms import UserForm, UserProfileForm
@@ -10,11 +10,32 @@ from django.contrib.auth.models import User
 from django.contrib.auth.hashers import check_password
 from django.core.exceptions import ObjectDoesNotExist, MultipleObjectsReturned
 from django.contrib.auth.decorators import login_required
+from django.contrib.sites.shortcuts import get_current_site
+from django.template.loader import render_to_string
+from .tokens import account_activation_token
+from django.core.mail import EmailMessage
+from django.utils.encoding import force_bytes, force_text
+from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
+
+import calendar
+
+def test(request):
+    return render(request, 'findr/acc_active_email.html')
+
+def month_name(month_number):
+    return calendar.month_name[month_number]
 
 @login_required(login_url='/findr/login')
 def index(request):
     usertype = request.session.get('usertype', None)
-    return render(request, 'findr/index.html', {'usertype':usertype})
+    time_loop = range(0,12)
+    today = datetime.datetime.now()
+    dates=[13]
+    for i in time_loop:
+        date = today + datetime.timedelta(days=i)
+        dates.append(date) 
+
+    return render(request, 'findr/index.html', {'usertype':usertype, 'time_loop':time_loop, 'dates':dates})
     
    
 
@@ -40,6 +61,21 @@ def welcome(request):
     return render(request, 'findr/welcome.html')
 
 
+def activate(request, uidb64, token):
+    try:
+        uid = force_text(urlsafe_base64_decode(uidb64))
+        user = User.objects.get(pk=uid)
+    except(TypeError, ValueError, OverflowError, User.DoesNotExist):
+        user = None
+    if user is not None and account_activation_token.check_token(user, token):
+        user.is_active = True
+        user.save()
+        login(request, user)
+        # return redirect('home')
+        return HttpResponse('Thank you for your email confirmation. Now you can login your account.')
+    else:
+        return HttpResponse('Activation link is invalid!')
+
 def register(request):
     # Like before, get the request's context.
 ##    context = RequestContext(request)
@@ -59,28 +95,44 @@ def register(request):
         if user_form.is_valid() and profile_form.is_valid():
             # Save the user's form data to the database.
             user = user_form.save()
-
+            user.is_active = False
             # Now we hash the password with the set_password method.
             # Once hashed, we can update the user object.
             user.set_password(user.password)
             user.save()
 
-            # Now sort out the UserProfile instance.
-            # Since we need to set the user attribute ourselves, we set commit=False.
-            # This delays saving the model until we're ready to avoid integrity problems.
             profile = profile_form.save(commit=False)
             profile.user = user
 
-            # Did the user provide a profile picture?
-            # If so, we need to get it from the input form and put it in the UserProfile model.
-            if 'picture' in request.FILES:
-                profile.picture = request.FILES['picture']
-
-            # Now we save the UserProfile model instance.
             profile.save()
 
-            # Update our variable to tell the template registration was successful.
             registered = True
+
+
+            current_site = get_current_site(request)
+            message = render_to_string("findr/acc_active_email.html", {
+                'user':user, 
+                'domain':current_site.domain,
+                'uid': urlsafe_base64_encode(force_bytes(user.pk)),
+                'token': account_activation_token.make_token(user),
+            })
+            mail_subject = 'Activate your blog account.'
+            to_email = user_form.cleaned_data.get('email')
+            email = EmailMessage(mail_subject, message, to=[to_email])
+            email.send()
+            return HttpResponse('Thank you for your email confirmation. Now you can login your account.')
+
+            # Now sort out the UserProfile instance.
+            # Since we need to set the user attribute ourselves, we set commit=False.
+            # This delays saving the model until we're ready to avoid integrity problems.
+            
+            # Did the user provide a profile picture?
+            # If so, we need to get it from the input form and put it in the UserProfile model.
+            # Now we save the UserProfile model instance.
+            
+
+            # Update our variable to tell the template registration was successful.
+            
 
         # Invalid form or forms - mistakes or something else?
         # Print problems to the terminal.
