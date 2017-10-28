@@ -19,8 +19,7 @@ from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
 
 import calendar
 
-def test(request):
-    return render(request, 'findr/acc_active_email.html')
+
 
 def month_name(month_number):
     return calendar.month_name[month_number]
@@ -70,9 +69,12 @@ def activate(request, uidb64, token):
     if user is not None and account_activation_token.check_token(user, token):
         user.is_active = True
         user.save()
-        login(request, user)
+        # login(request, user)
         # return redirect('home')
-        return HttpResponse('Thank you for your email confirmation. Now you can login your account.')
+        
+        return render(request, 'findr/activate_redirect.html')
+
+        return 
     else:
         return HttpResponse('Activation link is invalid!')
 
@@ -120,28 +122,11 @@ def register(request):
             to_email = user_form.cleaned_data.get('email')
             email = EmailMessage(mail_subject, message, to=[to_email])
             email.send()
-            return HttpResponse('Thank you for your email confirmation. Now you can login your account.')
+            return HttpResponse('Please confirm your email address to complete the registration')
 
-            # Now sort out the UserProfile instance.
-            # Since we need to set the user attribute ourselves, we set commit=False.
-            # This delays saving the model until we're ready to avoid integrity problems.
-            
-            # Did the user provide a profile picture?
-            # If so, we need to get it from the input form and put it in the UserProfile model.
-            # Now we save the UserProfile model instance.
-            
-
-            # Update our variable to tell the template registration was successful.
-            
-
-        # Invalid form or forms - mistakes or something else?
-        # Print problems to the terminal.
-        # They'll also be shown to the user.
         else:
             print (user_form.errors, profile_form.errors)
 
-    # Not a HTTP POST, so we render our form using two ModelForm instances.
-    # These forms will be blank, ready for user input.
     else:
         user_form = UserForm()
         profile_form = UserProfileForm()
@@ -282,6 +267,8 @@ def searchtest(request):
 
 @login_required(login_url='/findr/login')
 def category(request, category):
+
+# many to many filter. cityinfodetail info with citycategory!! important!
     result_list = CityInfoDetail.objects.filter(category__name__iexact=category)
     paginator = Paginator(result_list, 4)
     page = request.GET.get('page')
@@ -298,7 +285,12 @@ def category(request, category):
 
 @login_required(login_url='/findr/login')
 def itempage(request):
-    return render(request, 'findr/itempage.html')
+
+    itemtarget = request.GET.get('target')
+
+    targetGoogleMap = CityInfoDetail.objects.filter(name__exact=itemtarget)
+
+    return render(request, 'findr/itempage.html', {'googlemap':targetGoogleMap})
 
 def search(request):
     if request.method == "POST":

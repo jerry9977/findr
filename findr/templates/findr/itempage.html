@@ -37,7 +37,16 @@
 		</div>
 
 		<div class='first-content-container'>
-			<iframe class= 'locationGoogleMap'src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3522.684221298304!2d153.42286291569837!3d-28.00355604632275!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b91057aba149ea7%3A0x6162df26e42d8621!2sK+Resort!5e0!3m2!1sen!2sau!4v1468319023374" frameborder="0" allowfullscreen></iframe>
+
+			<!-- <iframe class= 'locationGoogleMap'src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3522.684221298304!2d153.42286291569837!3d-28.00355604632275!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b91057aba149ea7%3A0x6162df26e42d8621!2sK+Resort!5e0!3m2!1sen!2sau!4v1468319023374" frameborder="0" allowfullscreen></iframe> -->
+			{% if googlemap %}
+				{% for googlemaps in googlemap %}
+					<iframe class= 'locationGoogleMap'src="{{googlemaps.googlekey}}AIzaSyApbnldHTuNCZMFHpc81ur-OFzCTdyJki0" frameborder="0" allowfullscreen></iframe>
+				{% endfor %}
+			{% else %}
+				<iframe class= 'locationGoogleMap' src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJuyD2XARakWsRwITe81qjAgU&key=AIzaSyApbnldHTuNCZMFHpc81ur-OFzCTdyJki0" frameborder="0" allowfullscreen></iframe>
+			{% endif %}
+			
 		</div>
 		<div class='footer'>	
 			<div='footer-row'>
