@@ -30,10 +30,10 @@
     position: relative;
     z-index: 99 !important;
     width: 500px;
-    height: 325px;
+    height: 525px;
     margin-left: auto;
     margin-right: auto;
-    top: 50px;
+    top: 20px;
 }
 
 h1 {
@@ -46,23 +46,12 @@ h1 {
 	text-align: center;
 }
 
-#subtitle {
-    position:relative;
-    text-align:center;
-    cursor: default;
-    color: white;
-    margin-left: auto;
-    margin-right: auto;
-    left: -2%;
-    top: -2%;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
-
 #user_form {
     position: relative;
     margin-left: auto;
     margin-right: auto;
-    height: 300px;
+    height: 475px;
+    width: 475px;
     border-radius: 6px 6px 0 0;
     border: 2px solid black;
     box-shadow: 5px 5px 10px darkgrey;
@@ -76,6 +65,17 @@ p {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     left: 5%;
     top: 5%;
+}
+
+#id_name {
+    position: relative;
+    height:30px;
+    left: 12%;
+    padding-left: 15px;
+    background-color: #EDEDEC;
+    border: none;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size:16px;
 }
 
 #id_username {
@@ -102,7 +102,29 @@ p {
 #id_password {
     position: relative;
     height:30px;
-    left: 6%;
+    left: 6.6%;
+    padding-left: 15px;
+    background-color: #EDEDEC;
+    border: none;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size:16px;
+}
+
+#id_phoneNumber {
+    position: relative;
+    height:30px;
+    padding-left: 15px;
+    left: 0.3%;
+    background-color: #EDEDEC;
+    border: none;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size:16px;
+}
+
+#id_address {
+    position: relative;
+    height:30px;
+    left: 8.8%;
     padding-left: 15px;
     background-color: #EDEDEC;
     border: none;
@@ -128,7 +150,7 @@ a {
     text-align: center;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     color: darkgrey;
-    top: -15%;
+    top: -13%;
     font-size:15px;
  }
 
@@ -138,7 +160,7 @@ a {
     width:300px;
     height:40px;
     left: 18%;
-    top: 15px;
+    top: 35px;
     border: none;
     background-color: #1859F1;
     color: #EDEDEC;
@@ -149,4 +171,15 @@ a {
 
 #register-button:hover {
     transform: scale(1.05);
+}
+
+#returnlink {
+    text-decoration: none;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #04FAB7;
+}
+
+strong {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: white;
 }
