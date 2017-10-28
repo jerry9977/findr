@@ -16,17 +16,21 @@ class UserForm(forms.ModelForm):
         fields = ('username', 'email', 'password')
         exclude = ('user',)
         help_texts = {
+            'name': '',
             'username': '',
             'email': '',
             'password': '',
         }
 
 class UserProfileForm(forms.ModelForm):
+    name = forms.CharField(required=True)
     usertype = forms.ChoiceField(choices=USERTYPES, required=True )
+    phoneNumber = forms.CharField()
+    address = forms.CharField()
     
     class Meta:
         model = UserProfile
-        fields = ('usertype',)
+        fields = ('name', 'phoneNumber', 'address', 'usertype')
  
         
 

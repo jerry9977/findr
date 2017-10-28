@@ -9,7 +9,7 @@ class resultPost(admin.ModelAdmin):
     list_display = ['title', 'body']
 
 class UserProfileAdmin(admin.ModelAdmin):
-    list_display = ['user', 'usertype']
+    list_display = ['user', 'name', 'phoneNumber', 'address', 'usertype']
     class Meta:
         model = UserProfile
 

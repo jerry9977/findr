@@ -43,7 +43,9 @@ class UserProfile(models.Model):
 
     # The additional attributes we wish to include.
     # website = models.URLField(blank=True)
-    # picture = models.ImageField(upload_to='profile_images', blank=True)
+    name = models.CharField(max_length=128)
+    phoneNumber = models.IntegerField(default=0)
+    address = models.CharField(max_length=128)
     usertype = models.CharField(max_length=128,choices = USERTYPES, default = '')
     objects = models.Manager()
     class Meta:
@@ -68,6 +70,7 @@ class CityInfoDetail(models.Model):
     department = models.CharField(max_length=128)
     email = models.CharField(max_length=128)
     website = models.URLField(blank=True)
+    googlekey = models.URLField(blank=True)
     picture = models.ImageField(upload_to='thumbnail_images', blank=True)
     objects = models.Manager()
     def __str__(self):
