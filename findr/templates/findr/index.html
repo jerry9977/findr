@@ -423,7 +423,7 @@
 	                           
 	        	</a>
 
-	        	<a class='content-category' href="/findr/entertainment">
+	        	<!-- <a class='content-category' href="/findr/entertainment">
 
 					<i class='category-icon material-icons'>looks</i>
 
@@ -448,7 +448,7 @@
 	                </div>
 
 	                           
-	        	</a>
+	        	</a> -->
 	        	<a class='content-category' href="/findr/cityinfo">
 
 					<i class='category-icon material-icons'>location_city</i>
@@ -666,13 +666,13 @@
 
 	                           
 	        	</a>
-	        	<a class='content-category' href="/findr/entertainment">
+	        	<a class='content-category' href="/findr/industry">
 
-					<i class='category-icon material-icons'>looks</i>
+					<i class='category-icon material-icons'>business</i>
 
 	                <div class='description-box'>
 	                    <div class='description-title' type="title" component="h1">
-	                        ENTERTAINMENT
+	                        INDUSTRY
 	                    </div>
 
 	                    <div class='description-paragraph' type="subheading" component="p">
@@ -737,10 +737,25 @@
 						SITE MAP
 					</h1>
 					<li><a class='a-all' href='../index'>HOME</li>
+					{% if usertype == "student" %}
 					<li><a class='a-all' href="../college">COLLGES</a></li>
 					<li><a class='a-all' href="../library">LIBRARY<a></li>
+					{% endif %}
+					{% if usertype == "tourist" %}
+					<li><a class='a-all' href="../hotel">HOTELS</a></li>
+					{% endif %}
+					{% if usertype == "businessman" %}
+					<li><a class='a-all' href="../hotel">HOTELS</a></li>
+					<li><a class='a-all' href="../industry">INDUSTRIES</a></li>
+					{% endif %}
 					<li><a class='a-all' href="../cityinfo">CITY INFO</a></li>
-					
+					{% if usertype == "admin" %}
+					<li><a class='a-all' href="../college">COLLGES</a></li>
+					<li><a class='a-all' href="../library">LIBRARY<a></li>
+					<li><a class='a-all' href="../hotel">HOTELS</a></li>
+					<li><a class='a-all' href="../industry">INDUSTRIES</a></li>
+					<li><a class='a-all' href="/admin">ADMIN INTERFACE</a></li>
+					{% endif %}
 				</ul>
 
 				<ul class='general-site-functions'>
